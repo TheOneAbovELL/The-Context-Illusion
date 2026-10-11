@@ -13,6 +13,20 @@ Everything runs locally: no GPU, no pretrained model, no network, no paid API.
 
 ## Quick start
 
+**One command starts everything**: environment and package checks, a quick self-check of the data
+generators and all six positional schemes, then the local interface in your browser
+(on Windows you can also double-click `start.bat`):
+
+```bash
+python start.py
+```
+
+Options: `--tests` (run the test suite first), `--studies` (rerun every study; cached runs are skipped),
+`--full` (tests + studies + lab report), `--check` (checks only, no interface), `--port N`,
+`--no-browser`, `-y` (answer yes to prompts). Stop the interface with Ctrl+C.
+
+Individual commands:
+
 ```bash
 python ctxlab.py env
 ```
@@ -27,7 +41,7 @@ python -m pytest
 
 No installation is required (the launcher adds `src/` to the path). Optional:
 `pip install -e .` provides a `ctxlab` command. Requirements: Python ≥ 3.10,
-torch, numpy, pandas, scipy, matplotlib, pyyaml, statsmodels, psutil;
+torch, numpy, pandas, scipy, matplotlib, pyyaml, statsmodels, psutil, pyarrow;
 streamlit for the interface.
 
 ## What is inside
