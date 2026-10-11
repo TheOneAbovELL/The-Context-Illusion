@@ -1,0 +1,202 @@
+name: main_pe
+title: Positional encodings under length, position, distance and interference (Studies
+  1, 2, 3, 5)
+research_question: 'How does single-item retrieval accuracy depend on sequence length,
+  evidence position, evidence-to-query distance and interference, and how do six positional
+  representations compare under identical model, data, optimisation budget and evaluation
+  examples?
+
+  '
+hypothesis: '(H1) All methods that learn the task in distribution retain high accuracy
+  for in-range lengths at every evidence position. (H2) Beyond the training length,
+  methods whose attention logits depend on absolute position (learned, sinusoidal)
+  degrade more than translation-invariant ones (RoPE, T5 bias, ALiBi, NoPE), and the
+  learned table degrades most because its rows beyond the training length are untrained.
+  (H3) At a fixed length, more distractor associations and lures reduce accuracy.
+  Each hypothesis can be falsified by the grids below.
+
+  '
+independent_variables:
+- pos_method
+- seq_len
+- evidence_pos
+- evidence_distance
+- n_pairs
+- n_lures
+- repeat_distractor_keys
+controlled_variables:
+- 'architecture: 2 layers, d_model 64, 2 heads (d_h 32), d_mlp 256, pre-LN (identical
+  attention code)'
+- training data distribution, steps, batch size, optimiser, learning-rate schedule
+- evaluation examples (shared eval_seed; cells paired within each grid)
+primary_metric: exact-match accuracy of the answer token at <ans>
+expected_failure_modes:
+- a method fails to learn in distribution (optimisation, not extrapolation) -> flagged
+  by val acc < 0.9
+- 'learned absolute table: untrained rows beyond the training length'
+- 'sinusoidal: unseen absolute phase combinations at long lengths'
+- 'T5 bias: all distances >= 128 share one bucket'
+- 'ALiBi: fixed distance penalty limits long-range reads'
+- 'NoPE: weak positional information, slower learning'
+- softmax dilution over more filler tokens at longer lengths
+seeds:
+- 0
+- 1
+- 2
+eval_seed: 20261011
+model:
+  d_model: 64
+  n_heads: 2
+  n_layers: 2
+  d_mlp: 256
+  max_positions: 512
+train_task:
+  task: recall
+  seq_len:
+  - 24
+  - 64
+  n_pairs:
+  - 2
+  - 8
+  n_lures:
+  - 0
+  - 1
+  lure_prob: 0.25
+  n_queries: all
+  single_query_prob: 0.25
+  query_format: ans_marker
+train:
+  steps: 6000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 250
+  log_every: 50
+  val_examples: 512
+  checkpoint_steps:
+  - 250
+  - 500
+  - 1000
+  - 1500
+  - 2000
+  - 3000
+  - 4000
+  - 6000
+variants:
+- name: rope
+  model:
+    pos_method: rope
+- name: learned
+  model:
+    pos_method: learned
+- name: sinusoidal
+  model:
+    pos_method: sinusoidal
+- name: t5_relative
+  model:
+    pos_method: t5_relative
+- name: alibi
+  model:
+    pos_method: alibi
+- name: none
+  model:
+    pos_method: none
+eval_grids:
+- name: length
+  vary:
+    seq_len:
+    - 32
+    - 48
+    - 64
+    - 96
+    - 128
+    - 192
+    - 256
+  base:
+    n_queries: 1
+  n: 300
+- name: length_x_position
+  vary:
+    seq_len:
+    - 64
+    - 128
+    - 256
+    evidence_pos:
+    - 0.0
+    - 0.25
+    - 0.5
+    - 0.75
+    - 1.0
+  base:
+    n_queries: 1
+  n: 200
+- name: length_x_distance
+  vary:
+    seq_len:
+    - 64
+    - 128
+    - 256
+    evidence_distance:
+    - 8
+    - 24
+    - 56
+  base:
+    n_queries: 1
+  n: 200
+- name: distractors
+  vary:
+    seq_len:
+    - 64
+    - 128
+    n_pairs:
+    - 1
+    - 2
+    - 4
+    - 8
+    - 12
+    - 16
+    - 24
+  base:
+    n_queries: 1
+    n_lures: 0
+  n: 200
+- name: lures
+  vary:
+    n_lures:
+    - 0
+    - 1
+    - 2
+    - 4
+  base:
+    seq_len: 64
+    n_pairs: 6
+    lure_prob: 1.0
+    n_queries: 1
+  n: 300
+- name: repeated_keys
+  vary:
+    repeat_distractor_keys:
+    - false
+    - true
+  base:
+    seq_len: 64
+    n_pairs: 16
+    n_lures: 0
+    n_queries: 1
+  n: 300
+analyses:
+  position_offset:
+  - 0
+  - 64
+  - 192
+  control_n: 400
+  leakage_check: 5000
+reference_variant: rope
+scope_note: 'Model size, steps and eval-set sizes are set for a contended 6-core laptop
+  CPU. Maximum evaluation length is 4x the maximum training length. Mechanistic analysis
+  is run on seed 0 only.
+
+  '
+notes: ''
+source_path: configs\study_main_pe.yaml

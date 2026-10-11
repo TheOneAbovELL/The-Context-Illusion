@@ -1,0 +1,5 @@
+Q2_fillers 200 loss=2.718 acc=0.235 val=0.359 t=88
+Q2_fillers 400 loss=1.524 acc=0.460 val=0.492 t=197
+Q2_fillers 600 loss=1.349 acc=0.544 val=0.582 t=287
+Q2_fillers 800 loss=1.243 acc=0.590 val=0.590 t=407
+Q2_fillers 1000 loss=1.202 acc=0.602 val=0.625 t=575

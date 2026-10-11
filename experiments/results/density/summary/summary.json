@@ -1,0 +1,15 @@
+{
+  "study": "density",
+  "n_runs": 9,
+  "flags": [
+    "`q01_s0_0d61cfa0`: in-distribution val acc 0.086 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`q01_s1_995ee30d`: in-distribution val acc 0.035 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`q01_s2_d18c3c11`: in-distribution val acc 0.070 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`q04_s0_5777c1d0`: in-distribution val acc 0.266 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`q04_s2_5f70bcf9`: in-distribution val acc 0.059 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation."
+  ],
+  "figures": [
+    "fig_order.png",
+    "fig_training_curves.png"
+  ]
+}

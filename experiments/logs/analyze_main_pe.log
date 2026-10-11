@@ -1,0 +1,13 @@
+[analyze main_pe] alibi_s0_14edea8d
+[analyze main_pe] learned_s0_b216759c
+[analyze main_pe] none_s0_3b095ef5
+[analyze main_pe] rope_s0_8f19ac01
+[analyze main_pe] sinusoidal_s0_7022156b
+[analyze main_pe] t5_relative_s0_fd015ce8
+                    run_id      variant   pos_method  long_len long_note
+0        alibi_s0_14edea8d        alibi        alibi       128          
+1      learned_s0_b216759c      learned      learned       128          
+2         none_s0_3b095ef5         none         none       128          
+3         rope_s0_8f19ac01         rope         rope       128          
+4   sinusoidal_s0_7022156b   sinusoidal   sinusoidal       128          
+5  t5_relative_s0_fd015ce8  t5_relative  t5_relative       128          

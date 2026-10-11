@@ -1,0 +1,48 @@
+{
+  "run_id": "learned_s0_6718f8d8",
+  "training": {
+    "steps_completed": 60,
+    "stopped_early": false,
+    "final_train_loss": 4.783229525883993,
+    "final_val_loss": 4.681551247835159,
+    "final_val_acc": 0.0,
+    "steps_to_val_acc_0.5": null,
+    "steps_to_val_acc_0.9": null,
+    "steps_to_val_acc_0.99": null,
+    "train_time_s": 10.64841341972351,
+    "max_train_len_seen": 32,
+    "n_params": 29568,
+    "n_params_positional": 4096
+  },
+  "controls": {
+    "in_distribution_acc": 0.03125,
+    "evidence_removed_acc": 0.03125,
+    "chance_acc": 0.03125,
+    "pos_offset_0_acc": 0.03125,
+    "pos_offset_32_acc": 0.03125
+  },
+  "validity": {
+    "eval_examples_checked": 240,
+    "eval_examples_with_violations": 0,
+    "n_train_sampled": 500,
+    "n_eval": 240,
+    "n_eval_in_train_sample": 0,
+    "mask_check_max_abs_diff": 0.0,
+    "position_overflow_rows": 0
+  },
+  "grid_accuracy": {
+    "control_evidence_removed": 0.03125,
+    "control_in_distribution": 0.03125,
+    "control_position_offset": 0.03125,
+    "length": 0.041666666666666664,
+    "position": 0.025
+  },
+  "baselines_in_distribution": {
+    "oracle": 1.0,
+    "naive_induction": 1.0,
+    "last_value": 0.37916666666666665,
+    "random_context": 0.36875,
+    "chance": 0.03125
+  },
+  "notes": "All values are measured on this run; CIs are example-level only."
+}

@@ -1,0 +1,7 @@
+grid,variant,cell_seq_len,n_seeds,mean,std,min,max,t_lo,t_hi,n_per_seed
+length,learned,16.0,1,0.05,,0.05,0.05,,,40
+length,learned,32.0,1,0.025,,0.025,0.025,,,40
+length,learned,64.0,1,0.05,,0.05,0.05,,,40
+length,rope,16.0,1,0.0,,0.0,0.0,,,40
+length,rope,32.0,1,0.025,,0.025,0.025,,,40
+length,rope,64.0,1,0.025,,0.025,0.025,,,40

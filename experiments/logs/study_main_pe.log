@@ -1,0 +1,4 @@
+[study main_pe] 18 runs, workers=3, threads/worker=2
+[study main_pe] 22:33:25 {'run_id': 'rope_s0_79c102a0', 'status': 'completed', 'elapsed_s': 1189.5788412094116, 'val_acc': 0.603515625}
+[study main_pe] 22:33:26 {'run_id': 'rope_s1_fdbe0427', 'status': 'completed', 'elapsed_s': 1190.2562742233276, 'val_acc': 0.658203125}
+[study main_pe] 22:33:27 {'run_id': 'rope_s2_562ec0e7', 'status': 'completed', 'elapsed_s': 1191.0896620750427, 'val_acc': 0.64453125}

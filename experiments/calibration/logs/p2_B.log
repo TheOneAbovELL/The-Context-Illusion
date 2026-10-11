@@ -1,0 +1,9 @@
+B_lr3e-3 250 loss=3.034 acc=0.176 val=0.285 t=62s
+B_lr3e-3 500 loss=2.054 acc=0.261 val=0.262 t=124s
+B_lr3e-3 750 loss=1.925 acc=0.265 val=0.258 t=185s
+B_lr3e-3 1000 loss=1.873 acc=0.264 val=0.262 t=243s
+B_lr3e-3 1250 loss=1.799 acc=0.267 val=0.285 t=327s
+B_lr3e-3 1500 loss=1.733 acc=0.269 val=0.332 t=408s
+B_lr3e-3 1750 loss=1.670 acc=0.277 val=0.270 t=481s
+B_lr3e-3 2000 loss=1.633 acc=0.278 val=0.258 t=542s
+B_lr3e-3 2250 loss=1.612 acc=0.278 val=0.285 t=611s

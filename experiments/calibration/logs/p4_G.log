@@ -1,0 +1,8 @@
+G_tok0.02 250 loss=2.808 acc=0.201 val=0.293 gn=1.62 t=87s
+G_tok0.02 500 loss=1.896 acc=0.303 val=0.312 gn=1.73 t=152s
+G_tok0.02 750 loss=1.763 acc=0.345 val=0.367 gn=1.57 t=196s
+G_tok0.02 1000 loss=1.675 acc=0.366 val=0.414 gn=1.47 t=236s
+G_tok0.02 1250 loss=1.627 acc=0.374 val=0.391 gn=1.42 t=309s
+G_tok0.02 1500 loss=1.571 acc=0.383 val=0.348 gn=1.38 t=391s
+G_tok0.02 1750 loss=1.520 acc=0.400 val=0.406 gn=1.37 t=467s
+G_tok0.02 2000 loss=1.503 acc=0.394 val=0.367 gn=1.38 t=564s

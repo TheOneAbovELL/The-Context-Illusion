@@ -1,0 +1,43 @@
+{
+  "run_id": "q04_s0_5777c1d0",
+  "training": {
+    "steps_completed": 3000,
+    "stopped_early": false,
+    "final_train_loss": 2.8268732738494875,
+    "final_val_loss": 2.8411951065063477,
+    "final_val_acc": 0.265625,
+    "steps_to_val_acc_0.5": null,
+    "steps_to_val_acc_0.9": null,
+    "steps_to_val_acc_0.99": null,
+    "train_time_s": 613.997804403305,
+    "max_train_len_seen": 34,
+    "n_params": 116736,
+    "n_params_positional": 0
+  },
+  "controls": {
+    "in_distribution_acc": 0.2733333333333333,
+    "pos_offset_0_acc": 0.2733333333333333
+  },
+  "validity": {
+    "eval_examples_checked": 600,
+    "eval_examples_with_violations": 0,
+    "n_train_sampled": 3000,
+    "n_eval": 600,
+    "n_eval_in_train_sample": 0,
+    "mask_check_max_abs_diff": 0.0,
+    "position_overflow_rows": 0
+  },
+  "grid_accuracy": {
+    "control_in_distribution": 0.2733333333333333,
+    "control_position_offset": 0.2733333333333333,
+    "order": 0.265
+  },
+  "baselines_in_distribution": {
+    "oracle": 1.0,
+    "random_context": 0.0625,
+    "chance": 0.020833333333333332,
+    "best_fixed_offset": 0.5416666666666666,
+    "best_fixed_offset_d": 16
+  },
+  "notes": "All values are measured on this run; CIs are example-level only."
+}

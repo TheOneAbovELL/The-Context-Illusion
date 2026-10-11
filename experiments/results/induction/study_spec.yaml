@@ -1,0 +1,129 @@
+name: induction
+title: 'Content-based induction control: does retrieval emerge, and when?'
+research_question: 'On a task that can ONLY be solved by matching content (a shuffled
+  repeat, verified to have no fixed-offset solution), does each positional method
+  learn content-based retrieval within a fixed budget, and does the onset depend on
+  the positional method and on the head width?
+
+  '
+hypothesis: 'Calibration (single seeds) suggested: RoPE with 2 heads (d_h 32) learns
+  abruptly around step 1200; NoPE with 4 heads learns around step 1600; learned absolute
+  (2 or 4 heads) and RoPE with 4 heads (d_h 16) do not learn within 2000 steps. If
+  real, onset differences should replicate across seeds; if they are seed noise, onsets
+  will overlap across methods.
+
+  '
+independent_variables:
+- pos_method
+- n_heads
+controlled_variables:
+- 'task: shuffled induction, length 34 (16 distinct entities + 16-entity shuffled
+  repeat)'
+- d_model 64, 2 layers, d_mlp 256; optimiser, lr 3e-3, batch 64, 3000 steps
+- 'every second-half position supervised (n_queries: all) in training; evaluation
+  scores the final position'
+primary_metric: 'steps to 90% validation accuracy (onset of content-based retrieval);
+  final accuracy; for fixed-order models, accuracy on the shuffled order (does a perfect
+  training score imply content retrieval?)
+
+  '
+expected_failure_modes:
+- no onset within budget (reported as not reached, not as inability)
+- onset timing is stochastic; three seeds can only detect large differences
+- head-width variants also change per-head capacity, not only RoPE frequency coverage
+seeds:
+- 0
+- 1
+- 2
+eval_seed: 20261015
+model:
+  d_model: 64
+  n_layers: 2
+  d_mlp: 256
+  max_positions: 512
+train_task:
+  task: induction
+  seq_len: 34
+  induction_order: shuffled
+  n_queries: all
+train:
+  steps: 3000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 100
+  log_every: 50
+  val_examples: 256
+variants:
+- name: rope_h2
+  model:
+    pos_method: rope
+    n_heads: 2
+- name: rope_h4
+  model:
+    pos_method: rope
+    n_heads: 4
+- name: learned_h2
+  model:
+    pos_method: learned
+    n_heads: 2
+- name: learned_h4
+  model:
+    pos_method: learned
+    n_heads: 4
+- name: none_h2
+  model:
+    pos_method: none
+    n_heads: 2
+- name: none_h4
+  model:
+    pos_method: none
+    n_heads: 4
+- name: rope_h4_fixed_order
+  model:
+    pos_method: rope
+    n_heads: 4
+  train_task:
+    induction_order: fixed
+- name: learned_h4_fixed_order
+  model:
+    pos_method: learned
+    n_heads: 4
+  train_task:
+    induction_order: fixed
+eval_grids:
+- name: order
+  vary:
+    induction_order:
+    - shuffled
+    - fixed
+  base:
+    n_queries: 1
+  n: 300
+- name: length
+  vary:
+    seq_len:
+    - 34
+    - 50
+    - 66
+    - 96
+  base:
+    n_queries: 1
+    induction_order: shuffled
+  n: 300
+analyses:
+  position_offset:
+  - 0
+  - 64
+  control_n: 300
+  leakage_check: 3000
+reference_variant: rope_h2
+scope_note: 'Fixed-order variants (positional shortcut available) are the shortcut
+  condition: they are trained on the fixed order and evaluated on both orders (grid
+  `order`). Originally one seed; extended to three seeds and a second positional method
+  after the first result, because it is the most direct test of the central question.
+
+  '
+notes: ''
+source_path: configs\study_induction.yaml

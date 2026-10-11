@@ -1,0 +1,72 @@
+{
+  "run_id": "learned_s1_6ad3a80b",
+  "training": {
+    "steps_completed": 3000,
+    "stopped_early": false,
+    "final_train_loss": 2.1424297142028808,
+    "final_val_loss": 2.1344817150384188,
+    "final_val_acc": 0.197265625,
+    "steps_to_val_acc_0.5": null,
+    "steps_to_val_acc_0.9": null,
+    "steps_to_val_acc_0.99": null,
+    "train_time_s": 370.37271547317505,
+    "max_train_len_seen": 64,
+    "n_params": 149504,
+    "n_params_positional": 32768
+  },
+  "controls": {
+    "in_distribution_acc": 0.21,
+    "evidence_removed_acc": 0.0275,
+    "chance_acc": 0.03125,
+    "cf_distractor_edit_rate": 0.51,
+    "cf_distractor_edit_rate_given_orig_correct": 0.6309523809523809,
+    "cf_distractor_edit_n": 400,
+    "cf_evidence_move_rate": 0.8525,
+    "cf_evidence_move_rate_given_orig_correct": 0.8452380952380952,
+    "cf_evidence_move_n": 400,
+    "cf_filler_resample_rate": 0.9,
+    "cf_filler_resample_rate_given_orig_correct": 0.9047619047619048,
+    "cf_filler_resample_n": 400,
+    "cf_key_swap_rate": 0.195,
+    "cf_key_swap_rate_given_orig_correct": 0.023809523809523808,
+    "cf_key_swap_n": 400,
+    "cf_key_swap_shortcut_reference": 0.25,
+    "cf_value_edit_rate": 0.1075,
+    "cf_value_edit_rate_given_orig_correct": 0.19047619047619047,
+    "cf_value_edit_n": 400,
+    "cf_value_edit_shortcut_reference": 0.25,
+    "pos_offset_0_acc": 0.21,
+    "pos_offset_64_acc": 0.1925,
+    "pos_offset_192_acc": 0.2075
+  },
+  "validity": {
+    "eval_examples_checked": 9700,
+    "eval_examples_with_violations": 0,
+    "n_train_sampled": 5000,
+    "n_eval": 9700,
+    "n_eval_in_train_sample": 0,
+    "mask_check_max_abs_diff": 0.0,
+    "position_overflow_rows": 0
+  },
+  "grid_accuracy": {
+    "control_counterfactual": 0.513,
+    "control_evidence_removed": 0.0275,
+    "control_in_distribution": 0.21,
+    "control_position_offset": 0.20333333333333334,
+    "distractors": 0.195,
+    "length": 0.21047619047619048,
+    "length_x_distance": 0.14055555555555554,
+    "length_x_position": 0.211
+  },
+  "baselines_in_distribution": {
+    "oracle": 1.0,
+    "naive_induction": 0.933,
+    "last_value": 0.2865,
+    "random_context": 0.27125,
+    "elimination": 0.27125,
+    "chance": 0.03125,
+    "best_fixed_offset": 0.0265,
+    "best_fixed_offset_d": 25
+  },
+  "notes": "All values are measured on this run; CIs are example-level only."
+}

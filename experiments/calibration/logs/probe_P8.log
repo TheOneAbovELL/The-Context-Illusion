@@ -1,0 +1,12 @@
+P8_rope_h2 250 loss=2.761 acc=0.205 val=0.398 t=38
+P8_rope_h2 500 loss=1.848 acc=0.334 val=0.453 t=74
+P8_rope_h2 750 loss=1.739 acc=0.364 val=0.434 t=128
+P8_rope_h2 1000 loss=1.691 acc=0.368 val=0.445 t=166
+P8_rope_h2 1250 loss=1.640 acc=0.376 val=0.367 t=200
+P8_rope_h2 1500 loss=1.607 acc=0.395 val=0.465 t=232
+P8_rope_h2 1750 loss=1.559 acc=0.410 val=0.445 t=274
+P8_rope_h2 2000 loss=1.521 acc=0.431 val=0.504 t=305
+P8_rope_h2 2250 loss=1.494 acc=0.451 val=0.457 t=333
+P8_rope_h2 2500 loss=1.473 acc=0.471 val=0.438 t=362
+P8_rope_h2 2750 loss=1.455 acc=0.472 val=0.480 t=392
+P8_rope_h2 3000 loss=1.440 acc=0.481 val=0.480 t=417

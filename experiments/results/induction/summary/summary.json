@@ -1,0 +1,18 @@
+{
+  "study": "induction",
+  "n_runs": 24,
+  "flags": [
+    "`learned_h2_s2_e3f2095b`: in-distribution val acc 0.188 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_h2_s0_6a0e459a`: in-distribution val acc 0.766 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_h2_s1_85e1e9eb`: in-distribution val acc 0.871 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_h2_s2_58066cb5`: in-distribution val acc 0.727 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_h4_s0_5ca12584`: in-distribution val acc 0.707 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_h4_s1_f63939d1`: in-distribution val acc 0.832 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_h4_s2_14335b66`: in-distribution val acc 0.734 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation."
+  ],
+  "figures": [
+    "fig_order.png",
+    "fig_length.png",
+    "fig_training_curves.png"
+  ]
+}

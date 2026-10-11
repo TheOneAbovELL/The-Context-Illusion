@@ -1,0 +1,92 @@
+{
+  "study": "fillers",
+  "variant": "packed",
+  "seed": 1,
+  "model": {
+    "vocab_size": 134,
+    "d_model": 64,
+    "n_heads": 2,
+    "n_layers": 2,
+    "d_mlp": 256,
+    "dropout": 0.0,
+    "pos_method": "rope",
+    "max_positions": 512,
+    "pos_init_std": 0.02,
+    "tok_init_std": 0.02,
+    "sinusoidal_base": 10000.0,
+    "sinusoidal_scale": null,
+    "rel_num_buckets": 32,
+    "rel_max_distance": 128,
+    "rope_base": 10000.0,
+    "rope_scale": 1.0,
+    "ln_eps": 1e-05,
+    "tie_embeddings": false
+  },
+  "task": {
+    "task": "recall",
+    "seq_len": 24,
+    "length_choices": null,
+    "n_pairs": 4,
+    "fill_pairs": false,
+    "evidence_pos": null,
+    "evidence_distance": null,
+    "n_lures": 0,
+    "lure_prob": 1.0,
+    "repeat_distractor_keys": false,
+    "key_len": 1,
+    "near_miss_frac": 0.0,
+    "query_format": "ans_marker",
+    "n_queries": 4,
+    "single_query_prob": 0.0,
+    "aux_show_answers": false,
+    "hops": [
+      1,
+      2
+    ],
+    "n_chains": [
+      2,
+      4
+    ],
+    "query_types": [
+      "end"
+    ],
+    "link_order": "random",
+    "hop_gap": null,
+    "induction_order": "shuffled",
+    "induction_fixed_prob": 0.0
+  },
+  "train": {
+    "steps": 3000,
+    "batch_size": 64,
+    "lr": 0.003,
+    "min_lr_frac": 0.1,
+    "warmup_steps": 100,
+    "weight_decay": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.98,
+    "grad_clip": 1.0,
+    "eval_every": 100,
+    "log_every": 50,
+    "val_examples": 256,
+    "seed": 1,
+    "threads": 2,
+    "loss_on": "answer",
+    "early_stop_acc": null,
+    "checkpoint_steps": []
+  },
+  "grids": [
+    {
+      "name": "in_format",
+      "vary": {
+        "n_queries": [
+          4
+        ]
+      },
+      "base": null,
+      "n": 400
+    }
+  ],
+  "eval_seed": 20261016,
+  "run_id": "packed_s1_b84c142e",
+  "config_hash": "b84c142e"
+}

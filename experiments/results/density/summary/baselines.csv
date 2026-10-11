@@ -1,0 +1,3 @@
+grid,cell_induction_order,oracle,random_context,chance,best_fixed_offset,best_fixed_offset_d
+order,shuffled,1.0,0.0625,0.020833333333333332,0.1,17
+order,fixed,1.0,0.0625,0.020833333333333332,1.0,16

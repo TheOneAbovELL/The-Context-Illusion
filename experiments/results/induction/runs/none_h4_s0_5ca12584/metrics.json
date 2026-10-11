@@ -1,0 +1,45 @@
+{
+  "run_id": "none_h4_s0_5ca12584",
+  "training": {
+    "steps_completed": 3000,
+    "stopped_early": false,
+    "final_train_loss": 1.1659565925598145,
+    "final_val_loss": 1.1034297943115234,
+    "final_val_acc": 0.70703125,
+    "steps_to_val_acc_0.5": 900,
+    "steps_to_val_acc_0.9": null,
+    "steps_to_val_acc_0.99": null,
+    "train_time_s": 257.65788078308105,
+    "max_train_len_seen": 34,
+    "n_params": 116736,
+    "n_params_positional": 0
+  },
+  "controls": {
+    "in_distribution_acc": 0.6833333333333333,
+    "pos_offset_0_acc": 0.6833333333333333,
+    "pos_offset_64_acc": 0.6833333333333333
+  },
+  "validity": {
+    "eval_examples_checked": 1800,
+    "eval_examples_with_violations": 0,
+    "n_train_sampled": 3000,
+    "n_eval": 1800,
+    "n_eval_in_train_sample": 0,
+    "mask_check_max_abs_diff": 0.0,
+    "position_overflow_rows": 0
+  },
+  "grid_accuracy": {
+    "control_in_distribution": 0.6833333333333333,
+    "control_position_offset": 0.6833333333333333,
+    "length": 0.41083333333333333,
+    "order": 0.5333333333333333
+  },
+  "baselines_in_distribution": {
+    "oracle": 1.0,
+    "random_context": 0.046948877068557916,
+    "chance": 0.020833333333333332,
+    "best_fixed_offset": 0.20277777777777778,
+    "best_fixed_offset_d": 16
+  },
+  "notes": "All values are measured on this run; CIs are example-level only."
+}

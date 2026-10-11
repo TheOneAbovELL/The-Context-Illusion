@@ -1,0 +1,13 @@
+{
+  "study": "shortcut_dose",
+  "n_runs": 18,
+  "flags": [
+    "`p075_s0_d7b54bfe`: in-distribution val acc 0.773 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`p075_s1_bbcae06c`: in-distribution val acc 0.758 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`p075_s2_53736fbb`: in-distribution val acc 0.781 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation."
+  ],
+  "figures": [
+    "fig_order.png",
+    "fig_training_curves.png"
+  ]
+}

@@ -1,0 +1,7 @@
+none 2 250 loss=3.729 acc=0.101 val=0.262 t=41s
+none 2 500 loss=2.291 acc=0.264 val=0.258 t=80s
+none 2 750 loss=1.918 acc=0.274 val=0.293 t=132s
+none 2 1000 loss=1.799 acc=0.288 val=0.258 t=185s
+none 2 1250 loss=1.750 acc=0.291 val=0.293 t=240s
+none 2 1500 loss=1.693 acc=0.288 val=0.312 t=295s
+none 2 1750 loss=1.663 acc=0.291 val=0.324 t=349s

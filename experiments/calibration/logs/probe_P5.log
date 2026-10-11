@@ -1,0 +1,4 @@
+P5_all_keylast 250 loss=3.328 acc=0.125 val=0.273 t=78
+P5_all_keylast 500 loss=2.111 acc=0.262 val=0.266 t=175
+P5_all_keylast 750 loss=1.822 acc=0.330 val=0.410 t=266
+P5_all_keylast 1000 loss=1.692 acc=0.429 val=0.473 t=436

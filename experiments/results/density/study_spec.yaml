@@ -1,0 +1,81 @@
+name: density
+title: 'Supervision density on the induction control: does the number of trained answer
+  positions decide whether retrieval is learned?'
+research_question: 'Induction (content-based copying) is learned in ~500-900 steps
+  when every second-half position is supervised (15 per sequence), while associative
+  recall with 4 supervised queries per sequence is not learned in 3,000 steps even
+  when the value-type shortcut is removed. Is supervision density the factor?
+
+  '
+hypothesis: 'If density is decisive, induction with 1 or 4 supervised positions per
+  sequence (same task, same model, same evaluation) learns much later or not at all
+  within 3,000 steps. If induction with 1-4 positions is still learned, density does
+  not explain the recall/induction contrast.
+
+  '
+independent_variables:
+- supervised positions per sequence (1
+- 4
+- 15)
+controlled_variables:
+- identical sequences (the input tokens do not depend on how many positions are supervised)
+- shuffled induction, length 34; RoPE, 2 heads, d_model 64, 2 layers; lr 3e-3, batch
+  64, 3,000 steps
+- 'evaluation: the final position of identical example sets'
+primary_metric: steps to 90% validation accuracy; final accuracy
+expected_failure_modes:
+- fewer supervised positions = fewer training targets per step; the comparison is
+  per step, not per target
+seeds:
+- 0
+- 1
+- 2
+eval_seed: 20261019
+model:
+  d_model: 64
+  n_heads: 2
+  n_layers: 2
+  d_mlp: 256
+  max_positions: 512
+  pos_method: rope
+train_task:
+  task: induction
+  seq_len: 34
+  induction_order: shuffled
+train:
+  steps: 3000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 100
+  log_every: 50
+  val_examples: 256
+variants:
+- name: q01
+  train_task:
+    n_queries: 1
+- name: q04
+  train_task:
+    n_queries: 4
+- name: q15
+  train_task:
+    n_queries: all
+eval_grids:
+- name: order
+  vary:
+    induction_order:
+    - shuffled
+    - fixed
+  base:
+    n_queries: 1
+  n: 300
+analyses:
+  position_offset:
+  - 0
+  control_n: 300
+  leakage_check: 3000
+reference_variant: q15
+scope_note: ''
+notes: ''
+source_path: configs\study_density.yaml

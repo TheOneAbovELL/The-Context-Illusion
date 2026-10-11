@@ -1,0 +1,14 @@
+S2_learned 250 val=0.070 t=62
+S2_learned 500 val=0.145 t=120
+S2_learned 750 val=0.152 t=185
+S2_learned 1000 val=0.129 t=260
+S2_learned 1250 val=0.164 t=326
+S2_learned 1500 val=0.137 t=398
+S2_learned 1750 val=0.164 t=464
+S2_learned 2000 val=0.152 t=533
+S2_learned 2250 val=0.180 t=586
+S2_learned 2500 val=0.191 t=642
+S2_learned 2750 val=0.223 t=723
+S2_learned 3000 val=0.215 t=813
+S2_learned SINGLE-QUERY ACC 0.215
+S2_learned BATTERY {'cf_distractor_edit_rate': 0.615, 'cf_distractor_edit_rate_given_orig_correct': 0.744, 'cf_evidence_move_rate': 0.845, 'cf_evidence_move_rate_given_orig_correct': 0.802, 'cf_filler_resample_rate': 0.948, 'cf_filler_resample_rate_given_orig_correct': 0.953, 'cf_key_swap_rate': 0.181, 'cf_key_swap_rate_given_orig_correct': 0.012, 'cf_key_swap_shortcut_reference': 0.242, 'cf_value_edit_rate': 0.125, 'cf_value_edit_rate_given_orig_correct': 0.267, 'cf_value_edit_shortcut_reference': 0.243}

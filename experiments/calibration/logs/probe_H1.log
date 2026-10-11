@@ -1,0 +1,14 @@
+H1_rope 250 val=0.359 t=74
+H1_rope 500 val=0.336 t=122
+H1_rope 750 val=0.293 t=198
+H1_rope 1000 val=0.312 t=282
+H1_rope 1250 val=0.285 t=350
+H1_rope 1500 val=0.312 t=419
+H1_rope 1750 val=0.324 t=486
+H1_rope 2000 val=0.359 t=554
+H1_rope 2250 val=0.332 t=622
+H1_rope 2500 val=0.320 t=688
+H1_rope 2750 val=0.355 t=739
+H1_rope 3000 val=0.336 t=778
+H1_rope SINGLE-QUERY ACC 0.275
+H1_rope BATTERY {'cf_distractor_edit_rate': 0.468, 'cf_distractor_edit_rate_given_orig_correct': 0.7, 'cf_evidence_move_rate': 0.938, 'cf_evidence_move_rate_given_orig_correct': 0.9, 'cf_filler_resample_rate': 0.968, 'cf_filler_resample_rate_given_orig_correct': 0.964, 'cf_key_swap_rate': 0.26, 'cf_key_swap_rate_given_orig_correct': 0.0, 'cf_key_swap_shortcut_reference': 0.244, 'cf_value_edit_rate': 0.205, 'cf_value_edit_rate_given_orig_correct': 0.382, 'cf_value_edit_shortcut_reference': 0.244}

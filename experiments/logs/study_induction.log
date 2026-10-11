@@ -1,0 +1,47 @@
+[study induction] 19 runs, workers=3, threads/worker=2
+[study induction] 21:13:53 {'run_id': 'rope_h2_s1_4220baf1', 'status': 'completed', 'elapsed_s': 268.55344319343567, 'val_acc': 1.0}
+[study induction] 21:13:54 {'run_id': 'rope_h2_s0_92b653be', 'status': 'completed', 'elapsed_s': 268.9653115272522, 'val_acc': 1.0}
+[study induction] 21:13:54 {'run_id': 'rope_h2_s2_5241b678', 'status': 'completed', 'elapsed_s': 268.97668266296387, 'val_acc': 1.0}
+[study induction] 21:19:30 {'run_id': 'rope_h4_s0_b8076af6', 'status': 'completed', 'elapsed_s': 336.43084168434143, 'val_acc': 1.0}
+[study induction] 21:19:32 {'run_id': 'rope_h4_s2_b1cb5e7c', 'status': 'completed', 'elapsed_s': 337.98324370384216, 'val_acc': 1.0}
+[study induction] 21:19:32 {'run_id': 'rope_h4_s1_e1b545a6', 'status': 'completed', 'elapsed_s': 338.6542911529541, 'val_acc': 1.0}
+[study induction] 21:23:51 {'run_id': 'learned_h2_s0_5c85c4aa', 'status': 'completed', 'elapsed_s': 261.0034065246582, 'val_acc': 1.0}
+[study induction] 21:23:51 {'run_id': 'learned_h2_s1_4b7d6ea6', 'status': 'completed', 'elapsed_s': 259.3053948879242, 'val_acc': 1.0}
+[study induction] 21:23:52 {'run_id': 'learned_h2_s2_e3f2095b', 'status': 'completed', 'elapsed_s': 259.2715275287628, 'val_acc': 0.1875}
+[study induction] 21:28:43 {'run_id': 'learned_h4_s2_b0adc569', 'status': 'completed', 'elapsed_s': 291.4953145980835, 'val_acc': 1.0}
+[study induction] 21:28:45 {'run_id': 'learned_h4_s0_9ddefc3d', 'status': 'completed', 'elapsed_s': 294.0734980106354, 'val_acc': 1.0}
+[study induction] 21:28:45 {'run_id': 'learned_h4_s1_36d15c20', 'status': 'completed', 'elapsed_s': 293.8710775375366, 'val_acc': 1.0}
+[study induction] 21:32:38 {'run_id': 'none_h2_s0_6a0e459a', 'status': 'completed', 'elapsed_s': 235.14112639427185, 'val_acc': 0.765625}
+[study induction] 21:32:40 {'run_id': 'none_h2_s1_85e1e9eb', 'status': 'completed', 'elapsed_s': 235.55341601371765, 'val_acc': 0.87109375}
+[study induction] 21:32:40 {'run_id': 'none_h2_s2_58066cb5', 'status': 'completed', 'elapsed_s': 235.59089589118958, 'val_acc': 0.7265625}
+[study induction] 21:36:59 {'run_id': 'none_h4_s0_5ca12584', 'status': 'completed', 'elapsed_s': 260.7779965400696, 'val_acc': 0.70703125}
+[study induction] 21:37:01 {'run_id': 'none_h4_s2_14335b66', 'status': 'completed', 'elapsed_s': 261.08681559562683, 'val_acc': 0.734375}
+[study induction] 21:37:02 {'run_id': 'none_h4_s1_f63939d1', 'status': 'completed', 'elapsed_s': 261.65631556510925, 'val_acc': 0.83203125}
+[study induction] 21:39:45 {'run_id': 'rope_h4_fixed_order_s0_b5ba919e', 'status': 'completed', 'elapsed_s': 165.6632421016693, 'val_acc': 1.0}
+done: 19 runs, 0 failed
+[study induction] 24 runs, workers=3, threads/worker=2
+[study induction] 21:53:09 {'run_id': 'rope_h2_s0_92b653be', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'rope_h2_s2_5241b678', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'rope_h4_s0_b8076af6', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'rope_h4_s1_e1b545a6', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'rope_h4_s2_b1cb5e7c', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'learned_h2_s0_5c85c4aa', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'learned_h2_s1_4b7d6ea6', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'learned_h2_s2_e3f2095b', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'learned_h4_s0_9ddefc3d', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'learned_h4_s2_b0adc569', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'learned_h4_s1_36d15c20', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'none_h2_s0_6a0e459a', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'none_h2_s1_85e1e9eb', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'none_h2_s2_58066cb5', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'none_h4_s0_5ca12584', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'none_h4_s1_f63939d1', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'none_h4_s2_14335b66', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'rope_h4_fixed_order_s0_b5ba919e', 'status': 'cached'}
+[study induction] 21:53:09 {'run_id': 'rope_h2_s1_4220baf1', 'status': 'cached'}
+[study induction] 22:02:30 {'run_id': 'learned_h4_fixed_order_s0_1bf697c1', 'status': 'completed', 'elapsed_s': 561.1199333667755, 'val_acc': 1.0}
+[study induction] 22:04:11 {'run_id': 'rope_h4_fixed_order_s2_4a4b15dd', 'status': 'completed', 'elapsed_s': 662.1292636394501, 'val_acc': 1.0}
+[study induction] 22:04:23 {'run_id': 'rope_h4_fixed_order_s1_f0187e82', 'status': 'completed', 'elapsed_s': 673.6923360824585, 'val_acc': 1.0}
+[study induction] 22:11:46 {'run_id': 'learned_h4_fixed_order_s1_79789755', 'status': 'completed', 'elapsed_s': 555.9057919979095, 'val_acc': 1.0}
+[study induction] 22:12:02 {'run_id': 'learned_h4_fixed_order_s2_fac8c2c4', 'status': 'completed', 'elapsed_s': 471.0184814929962, 'val_acc': 1.0}
+done: 24 runs, 0 failed

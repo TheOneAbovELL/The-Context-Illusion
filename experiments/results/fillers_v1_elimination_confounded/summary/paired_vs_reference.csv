@@ -1,0 +1,2 @@
+grid,cell_n_queries,a,b,mean_diff,t_lo,t_hi,n_seeds,seeds_a_better,seeds_b_better
+in_format,4.0,fillers,packed,-0.027500000000000007,-0.14582295006811025,0.09082295006811023,3,0,1

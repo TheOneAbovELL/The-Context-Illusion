@@ -1,0 +1,9 @@
+{
+  "study": "fillers",
+  "n_runs": 6,
+  "flags": [],
+  "figures": [
+    "fig_in_format.png",
+    "fig_training_curves.png"
+  ]
+}

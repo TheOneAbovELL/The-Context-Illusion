@@ -1,0 +1,67 @@
+{
+  "run_id": "shared_keylast_s0_de804e47",
+  "training": {
+    "steps_completed": 3000,
+    "stopped_early": false,
+    "final_train_loss": 0.006026180064072833,
+    "final_val_loss": 0.0003693434118758887,
+    "final_val_acc": 1.0,
+    "steps_to_val_acc_0.5": 300,
+    "steps_to_val_acc_0.9": 600,
+    "steps_to_val_acc_0.99": 800,
+    "train_time_s": 346.686895608902,
+    "max_train_len_seen": 24,
+    "n_params": 116736,
+    "n_params_positional": 0
+  },
+  "controls": {
+    "in_distribution_acc": 1.0,
+    "evidence_removed_acc": 0.03666666666666667,
+    "chance_acc": 0.03125,
+    "cf_distractor_edit_rate": 1.0,
+    "cf_distractor_edit_rate_given_orig_correct": 1.0,
+    "cf_distractor_edit_n": 300,
+    "cf_evidence_move_rate": 0.9966666666666667,
+    "cf_evidence_move_rate_given_orig_correct": 0.9966666666666667,
+    "cf_evidence_move_n": 300,
+    "cf_filler_resample_rate": 1.0,
+    "cf_filler_resample_rate_given_orig_correct": 1.0,
+    "cf_filler_resample_n": 300,
+    "cf_key_swap_rate": 0.9966666666666667,
+    "cf_key_swap_rate_given_orig_correct": 0.9966666666666667,
+    "cf_key_swap_n": 300,
+    "cf_key_swap_shortcut_reference": 0.25,
+    "cf_value_edit_rate": 0.9966666666666667,
+    "cf_value_edit_rate_given_orig_correct": 0.9966666666666667,
+    "cf_value_edit_n": 300,
+    "cf_value_edit_shortcut_reference": 0.25,
+    "pos_offset_0_acc": 1.0
+  },
+  "validity": {
+    "eval_examples_checked": 400,
+    "eval_examples_with_violations": 0,
+    "n_train_sampled": 3000,
+    "n_eval": 400,
+    "n_eval_in_train_sample": 0,
+    "mask_check_max_abs_diff": 0.0,
+    "position_overflow_rows": 0
+  },
+  "grid_accuracy": {
+    "control_counterfactual": 0.998,
+    "control_evidence_removed": 0.03666666666666667,
+    "control_in_distribution": 1.0,
+    "control_position_offset": 1.0,
+    "in_format": 0.995
+  },
+  "baselines_in_distribution": {
+    "oracle": 1.0,
+    "naive_induction": 0.9375,
+    "last_value": 0.3425,
+    "random_context": 0.265625,
+    "elimination": 0.265625,
+    "chance": 0.03125,
+    "best_fixed_offset": 0.1225,
+    "best_fixed_offset_d": 9
+  },
+  "notes": "All values are measured on this run; CIs are example-level only."
+}

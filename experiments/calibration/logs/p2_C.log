@@ -1,0 +1,8 @@
+C_nq4 250 loss=3.372 acc=0.145 val=0.297 t=66s
+C_nq4 500 loss=1.985 acc=0.253 val=0.297 t=132s
+C_nq4 750 loss=1.813 acc=0.251 val=0.250 t=198s
+C_nq4 1000 loss=1.761 acc=0.260 val=0.277 t=262s
+C_nq4 1250 loss=1.743 acc=0.251 val=0.211 t=351s
+C_nq4 1500 loss=1.707 acc=0.262 val=0.281 t=435s
+C_nq4 1750 loss=1.652 acc=0.306 val=0.336 t=508s
+C_nq4 2000 loss=1.628 acc=0.334 val=0.359 t=565s

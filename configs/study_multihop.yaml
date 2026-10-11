@@ -1,0 +1,74 @@
+name: multihop
+title: "Multi-hop retrieval and compositionality (Task E, Study 6)"
+research_question: >
+  Does successful single-hop retrieval imply successful multi-hop retrieval? How does accuracy change
+  with the number of hops, the order of the relevant links and the gap between them?
+hypothesis: >
+  Accuracy falls with hop count; a model can answer each single hop of a chain correctly yet fail
+  their composition (compositionality gap), and 3-hop chains (never seen in training) fail more than
+  trained depths. Placing links in reverse order relative to the chain direction does not matter for a
+  causal model because all links precede the query.
+independent_variables: [hops, query_type, link_order, hop_gap, pos_method]
+controlled_variables:
+  - "architecture (3 layers, d_model 64), optimiser and step budget"
+  - "sequence length within each grid; number of chains"
+  - "identical contexts across query variants in the composition control"
+primary_metric: exact-match accuracy of the chain end (or successor for <nxt> queries)
+expected_failure_modes:
+  - "insufficient depth: 2 hops need at least two sequential retrieval steps after binding"
+  - "undertraining (multi-hop is harder than single-hop)"
+  - "3-hop evaluation is out of the training distribution (training hops 1-2)"
+seeds: [0, 1, 2]
+eval_seed: 20261013
+reference_variant: rope
+scope_note: >
+  Two positional methods (RoPE, learned) and lengths up to 96 to fit the CPU budget.
+model:
+  d_model: 64
+  n_heads: 2
+  n_layers: 3
+  d_mlp: 256
+  max_positions: 512
+train_task:
+  task: multihop
+  seq_len: [32, 64]
+  hops: [1, 2]
+  n_chains: [2, 4]
+  query_types: [end, next]
+  link_order: random
+  query_format: ans_marker
+train:
+  steps: 6000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 250
+  log_every: 50
+  val_examples: 512
+  checkpoint_steps: [250, 500, 1000, 1500, 2000, 3000, 4000, 6000]
+variants:
+  - {name: rope, model: {pos_method: rope}}
+  - {name: learned, model: {pos_method: learned}}
+eval_grids:
+  - name: hops
+    vary: {hops: [1, 2, 3], query_types: [[end], [next]]}
+    base: {seq_len: 64, n_chains: 3}
+    n: 300
+  - name: link_order
+    vary: {link_order: [forward, backward]}
+    base: {seq_len: 64, hops: 2, n_chains: 3, query_types: [end]}
+    n: 300
+  - name: hop_gap
+    vary: {hop_gap: [0, 8, 24, 40]}
+    base: {seq_len: 64, hops: 2, n_chains: 2, query_types: [end], link_order: forward}
+    n: 300
+  - name: hops_long
+    vary: {hops: [1, 2], seq_len: [64, 96]}
+    base: {n_chains: 3, query_types: [end]}
+    n: 300
+analyses:
+  position_offset: [0]
+  control_n: 400
+  leakage_check: 5000
+  composition_n: 400

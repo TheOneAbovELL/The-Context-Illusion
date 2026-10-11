@@ -1,0 +1,3 @@
+P2_short_2-4_d128 250 loss=2.051 val=0.461 t=93
+P2_short_2-4_d128 500 loss=1.373 val=0.520 t=170
+P2_short_2-4_d128 750 loss=1.253 val=0.535 t=247

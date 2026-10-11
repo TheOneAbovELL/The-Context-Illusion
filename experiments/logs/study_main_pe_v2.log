@@ -1,0 +1,20 @@
+[study main_pe] 18 runs, workers=3, threads/worker=2
+[study main_pe] 00:54:28 {'run_id': 'rope_s0_8f19ac01', 'status': 'completed', 'elapsed_s': 528.722738981247, 'val_acc': 0.994140625}
+[study main_pe] 00:54:31 {'run_id': 'rope_s1_5e00cee4', 'status': 'completed', 'elapsed_s': 531.4138689041138, 'val_acc': 0.298828125}
+[study main_pe] 00:54:35 {'run_id': 'rope_s2_7938b6b2', 'status': 'completed', 'elapsed_s': 535.5722405910492, 'val_acc': 0.259765625}
+[study main_pe] 01:01:24 {'run_id': 'learned_s0_b216759c', 'status': 'completed', 'elapsed_s': 416.13329577445984, 'val_acc': 0.158203125}
+[study main_pe] 01:01:29 {'run_id': 'learned_s1_6ad3a80b', 'status': 'completed', 'elapsed_s': 418.0992703437805, 'val_acc': 0.197265625}
+[study main_pe] 01:01:36 {'run_id': 'learned_s2_448772ac', 'status': 'completed', 'elapsed_s': 420.8941113948822, 'val_acc': 0.177734375}
+[study main_pe] 01:08:43 {'run_id': 'sinusoidal_s0_7022156b', 'status': 'completed', 'elapsed_s': 439.2949776649475, 'val_acc': 0.203125}
+[study main_pe] 01:08:47 {'run_id': 'sinusoidal_s1_98fe67d9', 'status': 'completed', 'elapsed_s': 437.5227074623108, 'val_acc': 0.189453125}
+[study main_pe] 01:08:58 {'run_id': 'sinusoidal_s2_a808ee47', 'status': 'completed', 'elapsed_s': 442.1541938781738, 'val_acc': 0.158203125}
+[study main_pe] 01:15:42 {'run_id': 't5_relative_s0_fd015ce8', 'status': 'completed', 'elapsed_s': 417.96341490745544, 'val_acc': 0.275390625}
+[study main_pe] 01:15:46 {'run_id': 't5_relative_s1_ddadde76', 'status': 'completed', 'elapsed_s': 419.66399931907654, 'val_acc': 0.212890625}
+[study main_pe] 01:16:02 {'run_id': 't5_relative_s2_6b7d8280', 'status': 'completed', 'elapsed_s': 423.9489176273346, 'val_acc': 0.279296875}
+[study main_pe] 01:22:49 {'run_id': 'alibi_s0_14edea8d', 'status': 'completed', 'elapsed_s': 426.7276110649109, 'val_acc': 0.185546875}
+[study main_pe] 01:22:51 {'run_id': 'alibi_s1_48cfd5ce', 'status': 'completed', 'elapsed_s': 424.84771156311035, 'val_acc': 0.380859375}
+[study main_pe] 01:23:17 {'run_id': 'alibi_s2_58a1d391', 'status': 'completed', 'elapsed_s': 434.85873579978943, 'val_acc': 0.173828125}
+[study main_pe] 01:33:37 {'run_id': 'none_s0_3b095ef5', 'status': 'completed', 'elapsed_s': 647.7281241416931, 'val_acc': 0.19140625}
+[study main_pe] 01:33:39 {'run_id': 'none_s1_e4cb344a', 'status': 'completed', 'elapsed_s': 646.8923218250275, 'val_acc': 0.18359375}
+[study main_pe] 01:34:13 {'run_id': 'none_s2_38e4d4af', 'status': 'completed', 'elapsed_s': 655.8519041538239, 'val_acc': 0.169921875}
+done: 18 runs, 0 failed

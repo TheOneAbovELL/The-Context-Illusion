@@ -1,0 +1,7 @@
+rope 2 250 loss=3.748 acc=0.097 val=0.250 t=44s
+rope 2 500 loss=2.337 acc=0.262 val=0.258 t=87s
+rope 2 750 loss=1.944 acc=0.269 val=0.293 t=147s
+rope 2 1000 loss=1.784 acc=0.283 val=0.270 t=206s
+rope 2 1250 loss=1.724 acc=0.292 val=0.328 t=268s
+rope 2 1500 loss=1.690 acc=0.288 val=0.332 t=330s
+rope 2 1750 loss=1.665 acc=0.291 val=0.352 t=388s

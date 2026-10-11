@@ -1,0 +1,1 @@
+mode=shuffled pos=rope heads=2 lr=0.003 supervised/seq=16: acc at every 200 steps = [0.058, 0.067, 0.056, 0.067, 0.065, 0.971, 1.0, 1.0, 1.0, 0.99]

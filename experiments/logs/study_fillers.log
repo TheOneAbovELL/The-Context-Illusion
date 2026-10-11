@@ -1,0 +1,8 @@
+[study fillers] 6 runs, workers=3, threads/worker=2
+[study fillers] 21:44:08 {'run_id': 'packed_s0_9b274764', 'status': 'completed', 'elapsed_s': 258.48728919029236, 'val_acc': 1.0}
+[study fillers] 21:44:08 {'run_id': 'packed_s1_7391834c', 'status': 'completed', 'elapsed_s': 258.55644845962524, 'val_acc': 1.0}
+[study fillers] 21:44:08 {'run_id': 'packed_s2_d76748a3', 'status': 'completed', 'elapsed_s': 258.59188866615295, 'val_acc': 1.0}
+[study fillers] 21:52:28 {'run_id': 'fillers_s1_588de66b', 'status': 'completed', 'elapsed_s': 499.44089245796204, 'val_acc': 1.0}
+[study fillers] 21:52:29 {'run_id': 'fillers_s2_85c1c382', 'status': 'completed', 'elapsed_s': 501.1635994911194, 'val_acc': 0.9140625}
+[study fillers] 21:52:30 {'run_id': 'fillers_s0_06f531b3', 'status': 'completed', 'elapsed_s': 501.7099857330322, 'val_acc': 1.0}
+done: 6 runs, 0 failed

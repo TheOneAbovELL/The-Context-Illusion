@@ -1,0 +1,45 @@
+{
+  "run_id": "rope_h2_s1_4220baf1",
+  "training": {
+    "steps_completed": 3000,
+    "stopped_early": false,
+    "final_train_loss": 0.015486786178153125,
+    "final_val_loss": 2.7050604330725037e-05,
+    "final_val_acc": 1.0,
+    "steps_to_val_acc_0.5": 500,
+    "steps_to_val_acc_0.9": 500,
+    "steps_to_val_acc_0.99": 500,
+    "train_time_s": 259.28193068504333,
+    "max_train_len_seen": 34,
+    "n_params": 116736,
+    "n_params_positional": 0
+  },
+  "controls": {
+    "in_distribution_acc": 1.0,
+    "pos_offset_0_acc": 1.0,
+    "pos_offset_64_acc": 1.0
+  },
+  "validity": {
+    "eval_examples_checked": 1800,
+    "eval_examples_with_violations": 0,
+    "n_train_sampled": 3000,
+    "n_eval": 1800,
+    "n_eval_in_train_sample": 0,
+    "mask_check_max_abs_diff": 0.0,
+    "position_overflow_rows": 0
+  },
+  "grid_accuracy": {
+    "control_in_distribution": 1.0,
+    "control_position_offset": 1.0,
+    "length": 0.6375,
+    "order": 1.0
+  },
+  "baselines_in_distribution": {
+    "oracle": 1.0,
+    "random_context": 0.046948877068557916,
+    "chance": 0.020833333333333332,
+    "best_fixed_offset": 0.20277777777777778,
+    "best_fixed_offset_d": 16
+  },
+  "notes": "All values are measured on this run; CIs are example-level only."
+}

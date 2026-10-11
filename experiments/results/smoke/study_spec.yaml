@@ -1,0 +1,67 @@
+name: smoke
+title: Smoke test (tiny, not a scientific result)
+research_question: Does the pipeline run end to end?
+hypothesis: Pipeline executes; numbers are meaningless at this budget.
+independent_variables:
+- pos_method
+controlled_variables:
+- everything else
+primary_metric: exact-match accuracy
+expected_failure_modes:
+- undertrained
+seeds:
+- 0
+eval_seed: 7
+model:
+  d_model: 32
+  n_heads: 2
+  n_layers: 2
+  d_mlp: 64
+  max_positions: 128
+train_task:
+  seq_len:
+  - 16
+  - 32
+  n_pairs:
+  - 2
+  - 4
+train:
+  steps: 60
+  batch_size: 32
+  eval_every: 30
+  log_every: 30
+  val_examples: 64
+variants:
+- name: rope
+  model:
+    pos_method: rope
+- name: learned
+  model:
+    pos_method: learned
+eval_grids:
+- name: length
+  vary:
+    seq_len:
+    - 16
+    - 32
+    - 64
+  n: 40
+- name: position
+  vary:
+    evidence_pos:
+    - 0.0
+    - 0.5
+    - 1.0
+  base:
+    seq_len: 32
+  n: 40
+analyses:
+  leakage_check: 500
+  control_n: 64
+  position_offset:
+  - 0
+  - 32
+reference_variant: rope
+scope_note: ''
+notes: ''
+source_path: ''

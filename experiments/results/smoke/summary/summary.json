@@ -1,0 +1,13 @@
+{
+  "study": "smoke",
+  "n_runs": 2,
+  "flags": [
+    "`learned_s0_6718f8d8`: in-distribution val acc 0.000 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`rope_s0_311f16ee`: in-distribution val acc 0.016 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation."
+  ],
+  "figures": [
+    "fig_length.png",
+    "fig_position.png",
+    "fig_training_curves.png"
+  ]
+}

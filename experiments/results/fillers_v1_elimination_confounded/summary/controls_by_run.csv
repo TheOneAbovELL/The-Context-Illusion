@@ -1,0 +1,7 @@
+run_id,variant,seed,in_distribution_acc,evidence_removed_acc,chance_acc,pos_offset_0_acc
+fillers_s0_06f531b3,fillers,0,1.0,0.03,0.03125,1.0
+fillers_s1_588de66b,fillers,1,1.0,0.02666666666666667,0.03125,1.0
+fillers_s2_85c1c382,fillers,2,0.94,0.03666666666666667,0.03125,0.94
+packed_s0_9b274764,packed,0,1.0,0.03,0.03125,1.0
+packed_s1_7391834c,packed,1,1.0,0.04,0.03125,1.0
+packed_s2_d76748a3,packed,2,1.0,0.03,0.03125,1.0

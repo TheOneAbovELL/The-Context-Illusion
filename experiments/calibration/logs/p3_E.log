@@ -1,0 +1,4 @@
+E_lr1e-2 250 loss=2.701 acc=0.216 val=0.223 gn=1.12 t=93s
+E_lr1e-2 500 loss=2.040 acc=0.279 val=0.277 gn=1.13 t=194s
+E_lr1e-2 750 loss=1.924 acc=0.287 val=0.285 gn=0.97 t=258s
+E_lr1e-2 1000 loss=1.848 acc=0.310 val=0.309 gn=0.89 t=320s

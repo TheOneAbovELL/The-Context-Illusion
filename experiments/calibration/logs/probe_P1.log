@@ -1,0 +1,6 @@
+P1_short_2-4 250 loss=2.294 val=0.480 t=58
+P1_short_2-4 500 loss=1.249 val=0.621 t=112
+P1_short_2-4 750 loss=1.117 val=0.566 t=161
+P1_short_2-4 1000 loss=1.053 val=0.613 t=200
+P1_short_2-4 1250 loss=0.997 val=0.641 t=253
+P1_short_2-4 1500 loss=0.961 val=0.637 t=308

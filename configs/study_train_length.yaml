@@ -1,0 +1,70 @@
+name: train_length
+title: "Training-length mismatch (Study 4)"
+research_question: >
+  How does the maximum training length affect accuracy at familiar and longer evaluation lengths,
+  and does the answer depend on the positional representation?
+hypothesis: >
+  Training on longer sequences raises accuracy at lengths that were extrapolation for the short-trained
+  model, mainly by turning them into interpolation; at lengths beyond both training ranges, the
+  translation-invariant methods (RoPE, ALiBi) retain more accuracy than the learned absolute table.
+independent_variables: [max training length, pos_method, evaluation seq_len]
+controlled_variables:
+  - "architecture, optimiser, schedule and step budget (identical)"
+  - "task content distribution (n_pairs, lures, auxiliary queries)"
+  - "evaluation examples (shared eval_seed)"
+  - "NOTE: steps are matched, so longer-trained models see more tokens per step (unavoidable confound)"
+primary_metric: exact-match accuracy at <ans>, split by length regime (in_range / extrapolation)
+expected_failure_modes:
+  - "short-trained models fail to learn (fewer filler tokens make the task *easier* per example, not harder)"
+  - "long-trained models learn slower within the same step budget (harder examples)"
+  - "learned table rows beyond the training length are untrained"
+seeds: [0, 1]
+eval_seed: 20261012
+reference_variant: rope_short
+scope_note: >
+  Two seeds and three positional methods (RoPE, learned, NoPE) instead of all six, to fit the CPU
+  budget; the main study supplies the [24, 64] training range for all six methods with three seeds.
+model:
+  d_model: 64
+  n_heads: 2
+  n_layers: 2
+  d_mlp: 256
+  max_positions: 512
+train_task:
+  task: recall
+  n_pairs: [2, 8]
+  n_lures: [0, 1]
+  lure_prob: 0.25
+  n_queries: all
+  single_query_prob: 0.25
+  query_format: ans_marker
+  aux_show_answers: false   # auxiliary answers hidden: no elimination shortcut
+train:
+  steps: 6000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 250
+  log_every: 50
+  val_examples: 512
+variants:
+  - {name: rope_short, model: {pos_method: rope}, train_task: {seq_len: [24, 48]}}
+  - {name: rope_long, model: {pos_method: rope}, train_task: {seq_len: [24, 96]}}
+  - {name: learned_short, model: {pos_method: learned}, train_task: {seq_len: [24, 48]}}
+  - {name: learned_long, model: {pos_method: learned}, train_task: {seq_len: [24, 96]}}
+  - {name: none_short, model: {pos_method: none}, train_task: {seq_len: [24, 48]}}
+  - {name: none_long, model: {pos_method: none}, train_task: {seq_len: [24, 96]}}
+eval_grids:
+  - name: length
+    vary: {seq_len: [32, 48, 64, 96, 128, 192, 256]}
+    base: {n_queries: 1}
+    n: 300
+  - name: length_x_distance
+    vary: {seq_len: [96, 192], evidence_distance: [8, 40, 80]}
+    base: {n_queries: 1}
+    n: 200
+analyses:
+  position_offset: [0, 96]
+  control_n: 400
+  leakage_check: 5000

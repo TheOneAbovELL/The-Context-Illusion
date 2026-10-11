@@ -1,0 +1,107 @@
+{
+  "study": "smoke",
+  "variant": "rope",
+  "seed": 0,
+  "model": {
+    "vocab_size": 134,
+    "d_model": 32,
+    "n_heads": 2,
+    "n_layers": 2,
+    "d_mlp": 64,
+    "dropout": 0.0,
+    "pos_method": "rope",
+    "max_positions": 128,
+    "pos_init_std": 0.5,
+    "tok_init_std": 1.0,
+    "sinusoidal_base": 10000.0,
+    "rel_num_buckets": 32,
+    "rel_max_distance": 128,
+    "rope_base": 10000.0,
+    "rope_scale": 1.0,
+    "ln_eps": 1e-05,
+    "tie_embeddings": false
+  },
+  "task": {
+    "task": "recall",
+    "seq_len": [
+      16,
+      32
+    ],
+    "length_choices": null,
+    "n_pairs": [
+      2,
+      4
+    ],
+    "fill_pairs": false,
+    "evidence_pos": null,
+    "evidence_distance": null,
+    "n_lures": 0,
+    "lure_prob": 1.0,
+    "repeat_distractor_keys": false,
+    "key_len": 1,
+    "near_miss_frac": 0.0,
+    "n_queries": 1,
+    "hops": [
+      1,
+      2
+    ],
+    "n_chains": [
+      2,
+      4
+    ],
+    "query_types": [
+      "end"
+    ],
+    "link_order": "random",
+    "hop_gap": null
+  },
+  "train": {
+    "steps": 60,
+    "batch_size": 32,
+    "lr": 0.001,
+    "min_lr_frac": 0.1,
+    "warmup_steps": 200,
+    "weight_decay": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.98,
+    "grad_clip": 1.0,
+    "eval_every": 30,
+    "log_every": 30,
+    "val_examples": 64,
+    "seed": 0,
+    "threads": 2,
+    "loss_on": "answer",
+    "early_stop_acc": null
+  },
+  "grids": [
+    {
+      "name": "length",
+      "vary": {
+        "seq_len": [
+          16,
+          32,
+          64
+        ]
+      },
+      "base": null,
+      "n": 40
+    },
+    {
+      "name": "position",
+      "vary": {
+        "evidence_pos": [
+          0.0,
+          0.5,
+          1.0
+        ]
+      },
+      "base": {
+        "seq_len": 32
+      },
+      "n": 40
+    }
+  ],
+  "eval_seed": 7,
+  "run_id": "rope_s0_311f16ee",
+  "config_hash": "311f16ee"
+}

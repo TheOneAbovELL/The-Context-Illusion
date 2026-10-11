@@ -1,0 +1,7 @@
+grid,variant,cell_evidence_pos,n_seeds,mean,std,min,max,t_lo,t_hi,n_per_seed
+position,learned,0.0,1,0.0,,0.0,0.0,,,40
+position,learned,0.5,1,0.025,,0.025,0.025,,,40
+position,learned,1.0,1,0.05,,0.05,0.05,,,40
+position,rope,0.0,1,0.025,,0.025,0.025,,,40
+position,rope,0.5,1,0.025,,0.025,0.025,,,40
+position,rope,1.0,1,0.075,,0.075,0.075,,,40

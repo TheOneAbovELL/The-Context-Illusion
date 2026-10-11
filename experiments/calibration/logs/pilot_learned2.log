@@ -1,0 +1,7 @@
+learned 2 250 loss=3.895 acc=0.048 val=0.188 t=42s
+learned 2 500 loss=2.769 acc=0.244 val=0.270 t=81s
+learned 2 750 loss=2.338 acc=0.264 val=0.301 t=133s
+learned 2 1000 loss=2.208 acc=0.258 val=0.262 t=187s
+learned 2 1250 loss=2.125 acc=0.267 val=0.320 t=245s
+learned 2 1500 loss=2.074 acc=0.264 val=0.312 t=301s
+learned 2 1750 loss=2.020 acc=0.269 val=0.348 t=354s

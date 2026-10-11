@@ -1,0 +1,1 @@
+mode=shuffled supervised/seq=4: acc at every 200 steps = [0.041, 0.017, 0.067, 0.051, 0.103, 0.058, 0.058, 0.067, 0.072, 0.05]

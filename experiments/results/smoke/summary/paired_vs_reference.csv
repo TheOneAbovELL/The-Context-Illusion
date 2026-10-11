@@ -1,0 +1,7 @@
+grid,cell_seq_len,a,b,mean_diff,t_lo,t_hi,n_seeds,seeds_a_better,seeds_b_better,cell_evidence_pos
+length,16.0,learned,rope,0.05,,,1,1,0,
+length,32.0,learned,rope,0.0,,,1,0,0,
+length,64.0,learned,rope,0.025,,,1,1,0,
+position,,learned,rope,-0.025,,,1,0,1,0.0
+position,,learned,rope,0.0,,,1,0,0,0.5
+position,,learned,rope,-0.024999999999999994,,,1,0,1,1.0

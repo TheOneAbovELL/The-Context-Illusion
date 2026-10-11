@@ -1,0 +1,112 @@
+{
+  "study": "induction",
+  "variant": "rope_h4_fixed_order",
+  "seed": 0,
+  "model": {
+    "vocab_size": 134,
+    "d_model": 64,
+    "n_heads": 4,
+    "n_layers": 2,
+    "d_mlp": 256,
+    "dropout": 0.0,
+    "pos_method": "rope",
+    "max_positions": 512,
+    "pos_init_std": 0.02,
+    "tok_init_std": 0.02,
+    "sinusoidal_base": 10000.0,
+    "sinusoidal_scale": null,
+    "rel_num_buckets": 32,
+    "rel_max_distance": 128,
+    "rope_base": 10000.0,
+    "rope_scale": 1.0,
+    "ln_eps": 1e-05,
+    "tie_embeddings": false
+  },
+  "task": {
+    "task": "induction",
+    "seq_len": 34,
+    "length_choices": null,
+    "n_pairs": [
+      2,
+      8
+    ],
+    "fill_pairs": false,
+    "evidence_pos": null,
+    "evidence_distance": null,
+    "n_lures": 0,
+    "lure_prob": 1.0,
+    "repeat_distractor_keys": false,
+    "key_len": 1,
+    "near_miss_frac": 0.0,
+    "query_format": "key_last",
+    "n_queries": "all",
+    "single_query_prob": 0.0,
+    "hops": [
+      1,
+      2
+    ],
+    "n_chains": [
+      2,
+      4
+    ],
+    "query_types": [
+      "end"
+    ],
+    "link_order": "random",
+    "hop_gap": null,
+    "induction_order": "fixed"
+  },
+  "train": {
+    "steps": 3000,
+    "batch_size": 64,
+    "lr": 0.003,
+    "min_lr_frac": 0.1,
+    "warmup_steps": 100,
+    "weight_decay": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.98,
+    "grad_clip": 1.0,
+    "eval_every": 100,
+    "log_every": 50,
+    "val_examples": 256,
+    "seed": 0,
+    "threads": 2,
+    "loss_on": "answer",
+    "early_stop_acc": null,
+    "checkpoint_steps": []
+  },
+  "grids": [
+    {
+      "name": "order",
+      "vary": {
+        "induction_order": [
+          "shuffled",
+          "fixed"
+        ]
+      },
+      "base": {
+        "n_queries": 1
+      },
+      "n": 300
+    },
+    {
+      "name": "length",
+      "vary": {
+        "seq_len": [
+          34,
+          50,
+          66,
+          96
+        ]
+      },
+      "base": {
+        "n_queries": 1,
+        "induction_order": "shuffled"
+      },
+      "n": 300
+    }
+  ],
+  "eval_seed": 20261015,
+  "run_id": "rope_h4_fixed_order_s0_b5ba919e",
+  "config_hash": "b5ba919e"
+}

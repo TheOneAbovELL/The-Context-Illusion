@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-lab"
+version = "0.1.0"
+description = "The Context Illusion: a CPU-only research laboratory for long-context retrieval in small Transformers"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "statsmodels>=0.14",
+    "psutil>=5.9",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.30"]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+ctxlab = "context_lab.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = [
+    "slow: tests that train a model (seconds to a minute on CPU)",
+]
+addopts = "-ra -p no:asyncio -p no:cacheprovider"

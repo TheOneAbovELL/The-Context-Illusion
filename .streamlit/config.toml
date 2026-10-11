@@ -1,0 +1,7 @@
+[browser]
+# Local-only project: never send usage statistics.
+gatherUsageStats = false
+
+[server]
+headless = true
+address = "localhost"

@@ -1,0 +1,9 @@
+[analyze value_type] separate_keylast_s0_02877c6d
+[analyze value_type] separate_marker_s0_e7f66347
+[analyze value_type] shared_keylast_s0_de804e47
+[analyze value_type] shared_marker_s0_f52a7f38
+                         run_id           variant pos_method  long_len long_note
+0  separate_keylast_s0_02877c6d  separate_keylast       rope        48          
+1   separate_marker_s0_e7f66347   separate_marker       rope        48          
+2    shared_keylast_s0_de804e47    shared_keylast       rope        48          
+3     shared_marker_s0_f52a7f38     shared_marker       rope        48          

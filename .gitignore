@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+# Generated outputs (kept local; reproducible from configs)
+artifacts/checkpoints/
+experiments/results/**/*.pt
+desktop.ini

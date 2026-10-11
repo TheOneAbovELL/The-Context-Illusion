@@ -1,0 +1,96 @@
+name: value_type
+title: Why is associative recall so much harder than induction? The value-type shortcut
+  (2x2)
+research_question: 'The same 2-layer model learns content-based induction in ~500-900
+  steps but does not learn associative recall (single-query accuracy at the value-guessing
+  level after 3,000 steps). Is the reason that recall values are a separate token
+  type, so "answer with any value token" is a cheap partial solution that traps learning?
+  And does the query format matter?
+
+  '
+hypothesis: 'H_type: with values drawn from the SAME vocabulary as keys (no type-based
+  shortcut), recall is learned; with separate value tokens it is not. Prediction:
+  shared > separate in both query formats. H_format (secondary): key-last queries
+  (the query token itself is the key, as in induction) are learned faster than <ans>-marker
+  queries (the key must first be moved to <ans> by a previous-token head). Either
+  can be refuted: if all four cells stay at the guessing level, H_type is not sufficient.
+
+  '
+independent_variables:
+- value_vocab (separate / shared)
+- query_format (ans_marker / key_last)
+controlled_variables:
+- 4 associations, all 4 queried with HIDDEN auxiliary answers (no elimination shortcut),
+  length 24
+- 'chance identical in all cells: random value from context = 0.267, elimination =
+  0.267'
+- RoPE, 2 heads, d_model 64, 2 layers; lr 3e-3, batch 64, 3,000 steps
+- 'fillers: 3 (ans_marker) vs 7 (key_last) -- a side effect of the shorter key-last
+  query block'
+primary_metric: final validation accuracy (training format, scored final query); counterfactual
+  battery
+expected_failure_modes:
+- none of the cells learns within budget (inconclusive about the cause)
+- shared vocabulary allows a value to also be a key elsewhere; positional parsing
+  defines the pairs
+seeds:
+- 0
+- 1
+- 2
+eval_seed: 20261018
+model:
+  d_model: 64
+  n_heads: 2
+  n_layers: 2
+  d_mlp: 256
+  max_positions: 512
+  pos_method: rope
+train_task:
+  task: recall
+  seq_len: 24
+  n_pairs: 4
+  n_lures: 0
+  n_queries: 4
+  single_query_prob: 0.0
+  aux_show_answers: false
+train:
+  steps: 3000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 100
+  log_every: 50
+  val_examples: 256
+variants:
+- name: separate_marker
+  train_task:
+    value_vocab: separate
+    query_format: ans_marker
+- name: separate_keylast
+  train_task:
+    value_vocab: separate
+    query_format: key_last
+- name: shared_marker
+  train_task:
+    value_vocab: shared
+    query_format: ans_marker
+- name: shared_keylast
+  train_task:
+    value_vocab: shared
+    query_format: key_last
+eval_grids:
+- name: in_format
+  vary:
+    n_queries:
+    - 4
+  n: 400
+analyses:
+  position_offset:
+  - 0
+  control_n: 300
+  leakage_check: 3000
+reference_variant: separate_marker
+scope_note: ''
+notes: ''
+source_path: configs\study_value_type.yaml

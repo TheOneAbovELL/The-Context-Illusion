@@ -1,0 +1,9 @@
+[analyze induction] learned_h4_s0_9ddefc3d
+[analyze induction] none_h2_s0_6a0e459a
+[analyze induction] rope_h2_s0_92b653be
+[analyze induction] rope_h4_fixed_order_s0_b5ba919e
+                            run_id              variant pos_method  long_len long_note
+0           learned_h4_s0_9ddefc3d           learned_h4    learned        68          
+1              none_h2_s0_6a0e459a              none_h2       none        68          
+2              rope_h2_s0_92b653be              rope_h2       rope        68          
+3  rope_h4_fixed_order_s0_b5ba919e  rope_h4_fixed_order       rope        68          

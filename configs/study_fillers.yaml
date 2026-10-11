@@ -1,0 +1,61 @@
+name: fillers
+title: "Do irrelevant filler tokens slow the learning of retrieval? (controlled)"
+research_question: >
+  Holding the number of associations (4), the number of supervised queries (4, one per association)
+  and the query format fixed, does adding irrelevant filler tokens to the context change how quickly
+  and how well the model learns retrieval?
+hypothesis: >
+  If fillers are an obstacle, the filler condition reaches 90% later (or not at all) and ends lower than
+  the packed condition. The earlier Q1/Q2 pilot could not test this because it changed the number of
+  pairs (and hence chance level) together with the fillers.
+independent_variables: [filler count (0 vs 24)]
+controlled_variables:
+  - "4 associations per sequence, all 4 queried (3 auxiliary + 1 scored), <ans> query format"
+  - "auxiliary answers hidden (v2). v1 displayed them, which let the scored answer be found by elimination;
+     v1 results are kept in experiments/results/fillers_v1_elimination_confounded"
+  - "model (RoPE, 2 heads, d_model 64, 2 layers), optimiser, steps, batch size, seeds"
+  - "evaluation format identical to the training format; chance = 1/32, random-in-context = 1/4"
+  - "UNAVOIDABLE CONFOUND: fillers add length (24 vs 48 tokens) and spread the pairs apart"
+primary_metric: steps to 90% validation accuracy and final validation accuracy
+expected_failure_modes:
+  - "neither condition learns within budget (then the comparison is inconclusive)"
+  - "length and distance effects are confounded with filler count"
+seeds: [0, 1, 2]
+eval_seed: 20261016
+reference_variant: packed
+model:
+  d_model: 64
+  n_heads: 2
+  n_layers: 2
+  d_mlp: 256
+  max_positions: 512
+  pos_method: rope
+train_task:
+  task: recall
+  n_pairs: 4
+  n_lures: 0
+  n_queries: 4
+  single_query_prob: 0.0
+  query_format: ans_marker
+  aux_show_answers: false     # v2: answers of auxiliary queries are NOT displayed (no elimination shortcut)
+train:
+  steps: 3000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 100
+  log_every: 50
+  val_examples: 256
+variants:
+  - {name: packed, train_task: {seq_len: 24}}
+  - {name: fillers, train_task: {seq_len: 48}}
+eval_grids:
+  - name: in_format
+    vary: {n_queries: [4]}
+    n: 400
+analyses:
+  position_offset: [0]
+  control_n: 300
+  leakage_check: 3000
+  counterfactual: true

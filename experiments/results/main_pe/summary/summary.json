@@ -1,0 +1,33 @@
+{
+  "study": "main_pe",
+  "n_runs": 18,
+  "flags": [
+    "`alibi_s0_14edea8d`: in-distribution val acc 0.186 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`alibi_s1_48cfd5ce`: in-distribution val acc 0.381 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`alibi_s2_58a1d391`: in-distribution val acc 0.174 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`learned_s0_b216759c`: in-distribution val acc 0.158 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`learned_s1_6ad3a80b`: in-distribution val acc 0.197 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`learned_s2_448772ac`: in-distribution val acc 0.178 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_s0_3b095ef5`: in-distribution val acc 0.191 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_s1_e4cb344a`: in-distribution val acc 0.184 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`none_s2_38e4d4af`: in-distribution val acc 0.170 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`rope_s1_5e00cee4`: in-distribution val acc 0.299 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`rope_s2_7938b6b2`: in-distribution val acc 0.260 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`sinusoidal_s0_7022156b`: in-distribution val acc 0.203 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`sinusoidal_s1_98fe67d9`: in-distribution val acc 0.189 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`sinusoidal_s2_a808ee47`: in-distribution val acc 0.158 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`t5_relative_s0_fd015ce8`: in-distribution val acc 0.275 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`t5_relative_s1_ddadde76`: in-distribution val acc 0.213 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation.",
+    "`t5_relative_s2_6b7d8280`: in-distribution val acc 0.279 < 0.90 -> undertrained or unable to learn the task; out-of-distribution failures of this run are NOT evidence about extrapolation."
+  ],
+  "figures": [
+    "fig_length.png",
+    "fig_length_x_position.png",
+    "fig_length_x_position_heat.png",
+    "fig_length_x_distance.png",
+    "fig_length_x_distance_heat.png",
+    "fig_distractors.png",
+    "fig_distractors_heat.png",
+    "fig_training_curves.png"
+  ]
+}

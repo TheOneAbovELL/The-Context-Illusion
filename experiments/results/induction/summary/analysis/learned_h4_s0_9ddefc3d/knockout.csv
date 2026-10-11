@@ -1,0 +1,15 @@
+condition,layer,acc,p_answer,n,set
+none,-,1.0,0.999999994635582,200,in_distribution
+evidence,0,1.0,0.9999999934434891,200,in_distribution
+control_pair,0,1.0,0.999999994635582,200,in_distribution
+evidence,1,0.0,0.00023508281495261544,200,in_distribution
+control_pair,1,1.0,0.9999999952316284,200,in_distribution
+evidence,all,0.0,0.00026877740086525965,200,in_distribution
+control_pair,all,1.0,0.9999999952316284,200,in_distribution
+none,-,0.525,0.5239091570327389,200,long_68
+evidence,0,0.515,0.510481467524268,200,long_68
+control_pair,0,0.52,0.5202863390949547,200,long_68
+evidence,1,0.02,0.02281477292810988,200,long_68
+control_pair,1,0.525,0.5247980488657888,200,long_68
+evidence,all,0.01,0.013692268320506898,200,long_68
+control_pair,all,0.52,0.5213330390996624,200,long_68

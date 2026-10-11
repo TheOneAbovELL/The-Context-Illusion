@@ -1,0 +1,20 @@
+[study shortcut_dose] 18 runs, workers=3, threads/worker=2
+[study shortcut_dose] 00:16:44 {'run_id': 'p000_s1_c6880ee4', 'status': 'completed', 'elapsed_s': 358.41097474098206, 'val_acc': 1.0}
+[study shortcut_dose] 00:16:45 {'run_id': 'p000_s2_4576d952', 'status': 'completed', 'elapsed_s': 358.9587562084198, 'val_acc': 1.0}
+[study shortcut_dose] 00:16:45 {'run_id': 'p000_s0_ff654378', 'status': 'completed', 'elapsed_s': 359.1098368167877, 'val_acc': 1.0}
+[study shortcut_dose] 00:21:35 {'run_id': 'p025_s0_fd1fcbd0', 'status': 'completed', 'elapsed_s': 290.53109765052795, 'val_acc': 1.0}
+[study shortcut_dose] 00:21:35 {'run_id': 'p025_s2_c6563adc', 'status': 'completed', 'elapsed_s': 290.37665128707886, 'val_acc': 1.0}
+[study shortcut_dose] 00:21:36 {'run_id': 'p025_s1_230fa88f', 'status': 'completed', 'elapsed_s': 290.5842275619507, 'val_acc': 0.98046875}
+[study shortcut_dose] 00:26:26 {'run_id': 'p050_s0_cdab438f', 'status': 'completed', 'elapsed_s': 291.38829731941223, 'val_acc': 0.94921875}
+[study shortcut_dose] 00:26:27 {'run_id': 'p050_s1_1324a27f', 'status': 'completed', 'elapsed_s': 291.6298050880432, 'val_acc': 0.9921875}
+[study shortcut_dose] 00:26:27 {'run_id': 'p050_s2_e5603620', 'status': 'completed', 'elapsed_s': 291.6245069503784, 'val_acc': 1.0}
+[study shortcut_dose] 00:31:19 {'run_id': 'p075_s0_d7b54bfe', 'status': 'completed', 'elapsed_s': 292.59123158454895, 'val_acc': 0.7734375}
+[study shortcut_dose] 00:31:20 {'run_id': 'p075_s1_bbcae06c', 'status': 'completed', 'elapsed_s': 292.68440318107605, 'val_acc': 0.7578125}
+[study shortcut_dose] 00:31:20 {'run_id': 'p075_s2_53736fbb', 'status': 'completed', 'elapsed_s': 293.2196571826935, 'val_acc': 0.78125}
+[study shortcut_dose] 00:35:34 {'run_id': 'p095_s0_3086953b', 'status': 'completed', 'elapsed_s': 254.5798888206482, 'val_acc': 0.91015625}
+[study shortcut_dose] 00:35:35 {'run_id': 'p095_s1_d5f3a8b6', 'status': 'completed', 'elapsed_s': 255.18743538856506, 'val_acc': 0.9375}
+[study shortcut_dose] 00:35:35 {'run_id': 'p095_s2_23b655fa', 'status': 'completed', 'elapsed_s': 254.72507166862488, 'val_acc': 0.9609375}
+[study shortcut_dose] 00:43:32 {'run_id': 'p100_s0_54d37f13', 'status': 'completed', 'elapsed_s': 478.3930926322937, 'val_acc': 1.0}
+[study shortcut_dose] 00:43:33 {'run_id': 'p100_s1_95c22248', 'status': 'completed', 'elapsed_s': 478.2024199962616, 'val_acc': 1.0}
+[study shortcut_dose] 00:43:33 {'run_id': 'p100_s2_542a479c', 'status': 'completed', 'elapsed_s': 477.97697281837463, 'val_acc': 1.0}
+done: 18 runs, 0 failed

@@ -1,0 +1,1 @@
+mode=shuffled pos=learned heads=4 lr=0.003 supervised/seq=16: acc at every 200 steps = [0.027, 0.075, 0.058, 0.079, 0.065, 0.075, 0.069, 0.075, 0.069, 0.083]

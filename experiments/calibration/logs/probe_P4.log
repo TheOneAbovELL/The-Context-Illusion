@@ -1,0 +1,10 @@
+P4_main_keylast 250 loss=3.360 val=0.246 t=81
+P4_main_keylast 500 loss=2.229 val=0.262 t=164
+P4_main_keylast 750 loss=1.928 val=0.242 t=236
+P4_main_keylast 1000 loss=1.821 val=0.289 t=311
+P4_main_keylast 1250 loss=1.745 val=0.246 t=384
+P4_main_keylast 1500 loss=1.696 val=0.223 t=456
+P4_main_keylast 1750 loss=1.652 val=0.238 t=503
+P4_main_keylast 2000 loss=1.624 val=0.316 t=573
+P4_main_keylast 2250 loss=1.584 val=0.301 t=630
+P4_main_keylast 2500 loss=1.561 val=0.320 t=688

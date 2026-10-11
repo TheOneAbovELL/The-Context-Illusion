@@ -1,0 +1,1 @@
+mode=shuffled pos=none heads=4 lr=0.003 supervised/seq=16: acc at every 200 steps = [0.031, 0.069, 0.048, 0.054, 0.067, 0.071, 0.09, 0.21, 0.431, 0.575]

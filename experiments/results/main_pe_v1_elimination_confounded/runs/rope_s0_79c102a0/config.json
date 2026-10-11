@@ -1,0 +1,213 @@
+{
+  "study": "main_pe",
+  "variant": "rope",
+  "seed": 0,
+  "model": {
+    "vocab_size": 134,
+    "d_model": 64,
+    "n_heads": 2,
+    "n_layers": 2,
+    "d_mlp": 256,
+    "dropout": 0.0,
+    "pos_method": "rope",
+    "max_positions": 512,
+    "pos_init_std": 0.02,
+    "tok_init_std": 0.02,
+    "sinusoidal_base": 10000.0,
+    "sinusoidal_scale": null,
+    "rel_num_buckets": 32,
+    "rel_max_distance": 128,
+    "rope_base": 10000.0,
+    "rope_scale": 1.0,
+    "ln_eps": 1e-05,
+    "tie_embeddings": false
+  },
+  "task": {
+    "task": "recall",
+    "seq_len": [
+      24,
+      64
+    ],
+    "length_choices": null,
+    "n_pairs": [
+      2,
+      8
+    ],
+    "fill_pairs": false,
+    "evidence_pos": null,
+    "evidence_distance": null,
+    "n_lures": [
+      0,
+      1
+    ],
+    "lure_prob": 0.25,
+    "repeat_distractor_keys": false,
+    "key_len": 1,
+    "near_miss_frac": 0.0,
+    "query_format": "ans_marker",
+    "n_queries": "all",
+    "single_query_prob": 0.25,
+    "hops": [
+      1,
+      2
+    ],
+    "n_chains": [
+      2,
+      4
+    ],
+    "query_types": [
+      "end"
+    ],
+    "link_order": "random",
+    "hop_gap": null,
+    "induction_order": "shuffled"
+  },
+  "train": {
+    "steps": 6000,
+    "batch_size": 64,
+    "lr": 0.003,
+    "min_lr_frac": 0.1,
+    "warmup_steps": 100,
+    "weight_decay": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.98,
+    "grad_clip": 1.0,
+    "eval_every": 250,
+    "log_every": 50,
+    "val_examples": 512,
+    "seed": 0,
+    "threads": 2,
+    "loss_on": "answer",
+    "early_stop_acc": null,
+    "checkpoint_steps": [
+      250,
+      500,
+      1000,
+      1500,
+      2000,
+      3000,
+      4000,
+      6000
+    ]
+  },
+  "grids": [
+    {
+      "name": "length",
+      "vary": {
+        "seq_len": [
+          32,
+          48,
+          64,
+          96,
+          128,
+          192,
+          256
+        ]
+      },
+      "base": {
+        "n_queries": 1
+      },
+      "n": 300
+    },
+    {
+      "name": "length_x_position",
+      "vary": {
+        "seq_len": [
+          64,
+          128,
+          256
+        ],
+        "evidence_pos": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ]
+      },
+      "base": {
+        "n_queries": 1
+      },
+      "n": 200
+    },
+    {
+      "name": "length_x_distance",
+      "vary": {
+        "seq_len": [
+          64,
+          128,
+          256
+        ],
+        "evidence_distance": [
+          8,
+          24,
+          56
+        ]
+      },
+      "base": {
+        "n_queries": 1
+      },
+      "n": 200
+    },
+    {
+      "name": "distractors",
+      "vary": {
+        "seq_len": [
+          64,
+          128
+        ],
+        "n_pairs": [
+          1,
+          2,
+          4,
+          8,
+          12,
+          16,
+          24
+        ]
+      },
+      "base": {
+        "n_queries": 1,
+        "n_lures": 0
+      },
+      "n": 200
+    },
+    {
+      "name": "lures",
+      "vary": {
+        "n_lures": [
+          0,
+          1,
+          2,
+          4
+        ]
+      },
+      "base": {
+        "seq_len": 64,
+        "n_pairs": 6,
+        "lure_prob": 1.0,
+        "n_queries": 1
+      },
+      "n": 300
+    },
+    {
+      "name": "repeated_keys",
+      "vary": {
+        "repeat_distractor_keys": [
+          false,
+          true
+        ]
+      },
+      "base": {
+        "seq_len": 64,
+        "n_pairs": 16,
+        "n_lures": 0,
+        "n_queries": 1
+      },
+      "n": 300
+    }
+  ],
+  "eval_seed": 20261011,
+  "run_id": "rope_s0_79c102a0",
+  "config_hash": "79c102a0"
+}

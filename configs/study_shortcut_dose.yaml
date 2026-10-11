@@ -1,0 +1,65 @@
+name: shortcut_dose
+title: "Shortcut dose-response: how much shortcut-admitting data prevents content retrieval?"
+research_question: >
+  When a fraction p of training examples can be solved by a positional shortcut (fixed-order induction)
+  and the rest require content matching (shuffled order), does the model still learn content-based
+  retrieval? At which p does it stop, and does the shortcut appear first in training?
+hypothesis: >
+  (H1) For p = 1 the model learns only the shortcut (replicating study `induction`: chance on shuffled).
+  (H2) For p < 1 the shuffled examples keep a learning signal for content matching, so shuffled-order
+  accuracy is eventually high, but onset is delayed as p grows because fewer examples require it.
+  (H3) Fixed-order accuracy rises before shuffled-order accuracy (shortcut first) whenever p > 0.
+  Alternative: once the shortcut solves most of the loss, the gradient toward content matching is too weak
+  and content retrieval never forms within the budget even for moderate p.
+independent_variables: [induction_fixed_prob p]
+controlled_variables:
+  - "model: RoPE, d_model 64, 2 layers, 4 heads, d_mlp 256"
+  - "task: induction, length 34, every second-half position supervised"
+  - "optimiser, lr 3e-3, batch 64, 3000 steps, checkpoints for learning dynamics"
+  - "evaluation: identical shuffled-order and fixed-order example sets for every run"
+primary_metric: accuracy on the shuffled order (content retrieval) at the end of training; onset step
+expected_failure_modes:
+  - "onset is stochastic; three seeds detect only large effects"
+  - "a model can mix strategies (shortcut on fixed-looking inputs, content otherwise) -- both orders are reported"
+seeds: [0, 1, 2]
+eval_seed: 20261017
+reference_variant: p000
+scope_note: One positional method (RoPE, 4 heads), chosen because it learns both strategies within budget in study `induction`.
+model:
+  d_model: 64
+  n_layers: 2
+  n_heads: 4
+  d_mlp: 256
+  max_positions: 512
+  pos_method: rope
+train_task:
+  task: induction
+  seq_len: 34
+  induction_order: mixed
+  n_queries: all
+train:
+  steps: 3000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 100
+  log_every: 50
+  val_examples: 256
+  checkpoint_steps: [100, 200, 300, 400, 500, 700, 1000, 1500, 2000, 3000]
+variants:
+  - {name: p000, train_task: {induction_fixed_prob: 0.0}}
+  - {name: p025, train_task: {induction_fixed_prob: 0.25}}
+  - {name: p050, train_task: {induction_fixed_prob: 0.5}}
+  - {name: p075, train_task: {induction_fixed_prob: 0.75}}
+  - {name: p095, train_task: {induction_fixed_prob: 0.95}}
+  - {name: p100, train_task: {induction_fixed_prob: 1.0}}
+eval_grids:
+  - name: order
+    vary: {induction_order: [shuffled, fixed]}
+    base: {n_queries: 1}
+    n: 300
+analyses:
+  position_offset: [0]
+  control_n: 300
+  leakage_check: 3000

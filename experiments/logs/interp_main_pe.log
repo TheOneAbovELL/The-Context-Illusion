@@ -1,0 +1,12 @@
+variant  seq_len  mode        
+rope     32       plain           0.541111
+         48       plain           0.522222
+         64       plain           0.521111
+         96       interpolated    0.521111
+                  plain           0.492222
+         128      interpolated    0.510000
+                  plain           0.414444
+         192      interpolated    0.496667
+                  plain           0.315556
+         256      interpolated    0.483333
+                  plain           0.227778

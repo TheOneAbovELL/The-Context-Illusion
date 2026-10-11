@@ -1,0 +1,11 @@
+[study density] 9 runs, workers=2, threads/worker=2
+[study density] 23:38:23 {'run_id': 'q01_s1_995ee30d', 'status': 'completed', 'elapsed_s': 351.9170150756836, 'val_acc': 0.03515625}
+[study density] 23:38:23 {'run_id': 'q01_s0_0d61cfa0', 'status': 'completed', 'elapsed_s': 351.98952984809875, 'val_acc': 0.0859375}
+[study density] 23:48:15 {'run_id': 'q01_s2_d18c3c11', 'status': 'completed', 'elapsed_s': 591.7937297821045, 'val_acc': 0.0703125}
+[study density] 23:48:39 {'run_id': 'q04_s0_5777c1d0', 'status': 'completed', 'elapsed_s': 615.7900693416595, 'val_acc': 0.265625}
+[study density] 23:57:56 {'run_id': 'q04_s1_866b4fb8', 'status': 'completed', 'elapsed_s': 581.2872064113617, 'val_acc': 1.0}
+[study density] 23:58:25 {'run_id': 'q04_s2_5f70bcf9', 'status': 'completed', 'elapsed_s': 586.3474311828613, 'val_acc': 0.05859375}
+[study density] 00:06:34 {'run_id': 'q15_s0_57522b18', 'status': 'completed', 'elapsed_s': 517.6333892345428, 'val_acc': 1.0}
+[study density] 00:07:24 {'run_id': 'q15_s1_0ea58256', 'status': 'completed', 'elapsed_s': 538.8722455501556, 'val_acc': 1.0}
+[study density] 00:10:15 {'run_id': 'q15_s2_80bf9735', 'status': 'completed', 'elapsed_s': 221.3145935535431, 'val_acc': 1.0}
+done: 9 runs, 0 failed

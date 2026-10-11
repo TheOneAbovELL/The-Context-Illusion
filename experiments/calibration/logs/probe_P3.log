@@ -1,0 +1,6 @@
+P3_short_keylast 250 loss=2.706 val=0.348 t=65
+P3_short_keylast 500 loss=1.526 val=0.473 t=114
+P3_short_keylast 750 loss=1.331 val=0.566 t=173
+P3_short_keylast 1000 loss=1.210 val=0.598 t=221
+P3_short_keylast 1250 loss=1.119 val=0.625 t=268
+P3_short_keylast 1500 loss=1.061 val=0.621 t=324

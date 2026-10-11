@@ -1,0 +1,4 @@
+grid,cell_n_queries,a,b,mean_diff,t_lo,t_hi,n_seeds,seeds_a_better,seeds_b_better
+in_format,4.0,separate_keylast,separate_marker,0.01833333333333333,0.011162245450417593,0.025504421216249067,3,3,0
+in_format,4.0,shared_keylast,separate_marker,0.735,0.6915275900443694,0.7784724099556306,3,3,0
+in_format,4.0,shared_marker,separate_marker,0.03999999999999998,-0.003472409955630834,0.0834724099556308,3,3,0

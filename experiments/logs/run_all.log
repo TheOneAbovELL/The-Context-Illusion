@@ -1,0 +1,16 @@
+=== 2026-10-11 21:52:54 fillers finished (started manually)
+=== 2026-10-11 21:52:54 start induction
+=== 2026-10-11 22:04:17 queue paused manually before main_pe (factor-isolation probes B/C/D pending); induction study left running
+=== 2026-10-11 22:13:17 queue resumed (induction extension finished)
+=== 2026-10-11 22:13:17 start main_pe
+=== 2026-10-11 22:49:00 main_pe stopped (elimination shortcut found); main_pe and fillers results moved to *_v1_elimination_confounded
+=== 2026-10-11 23:11:54 start value_type (2x2 value-type shortcut test) alongside fillers v2
+=== 2026-10-11 23:32:06 start density (supervision density on induction)
+=== 2026-10-11 23:53:47 analyses value_type+induction finished
+=== 2026-10-12 00:00:52 analyses value_type+induction finished (rerun after knockout fix)
+=== 2026-10-12 00:10:28 start shortcut_dose
+=== 2026-10-12 00:43:39 end shortcut_dose (exit 0)
+=== 2026-10-12 00:45:20 dynamics shortcut_dose finished
+=== 2026-10-12 00:45:21 start main_pe (v2)
+=== 2026-10-12 01:34:54 end main_pe v2 (exit 0)
+=== 2026-10-12 01:49:07 main_pe v2 dynamics+analysis+interp finished

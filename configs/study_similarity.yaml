@@ -1,0 +1,57 @@
+name: similarity
+title: "Distractor similarity with compound keys (Task C, similarity axis)"
+research_question: >
+  Holding the number of distractors fixed, does retrieval degrade when distractor keys share a
+  sub-token with the query key (near-misses)?
+hypothesis: >
+  Accuracy decreases as the fraction of near-miss distractors increases, and the effect grows with the
+  number of distractors; a model that matches only the first sub-token would be at ~1/(1+#near-misses).
+independent_variables: [near_miss_frac, n_pairs, pos_method]
+controlled_variables:
+  - "sequence length (64), number of distractors within each cell, key length (2 sub-tokens)"
+  - "architecture, optimiser and step budget"
+primary_metric: exact-match accuracy at <ans>
+expected_failure_modes:
+  - "compound keys need two-token matching -> slower learning; flagged by in-distribution accuracy"
+  - "if training contains few near-misses, the model may learn a first-token shortcut"
+seeds: [0, 1]
+eval_seed: 20261014
+reference_variant: rope
+scope_note: Two positional methods (RoPE, learned), two seeds, in-range lengths only (CPU budget).
+model:
+  d_model: 64
+  n_heads: 2
+  n_layers: 2
+  d_mlp: 256
+  max_positions: 512
+train_task:
+  task: recall
+  key_len: 2
+  near_miss_frac: 0.3
+  seq_len: [24, 64]
+  n_pairs: [2, 8]
+  n_queries: all
+  single_query_prob: 0.25
+  query_format: ans_marker
+  aux_show_answers: false   # auxiliary answers hidden: no elimination shortcut
+train:
+  steps: 6000
+  batch_size: 64
+  lr: 0.003
+  warmup_steps: 100
+  min_lr_frac: 0.1
+  eval_every: 250
+  log_every: 50
+  val_examples: 512
+variants:
+  - {name: rope, model: {pos_method: rope}}
+  - {name: learned, model: {pos_method: learned}}
+eval_grids:
+  - name: near_miss
+    vary: {n_pairs: [4, 8], near_miss_frac: [0.0, 0.5, 1.0]}
+    base: {seq_len: 64, n_queries: 1}
+    n: 300
+analyses:
+  position_offset: [0]
+  control_n: 400
+  leakage_check: 5000

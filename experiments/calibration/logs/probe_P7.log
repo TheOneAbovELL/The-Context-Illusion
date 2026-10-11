@@ -1,0 +1,12 @@
+P7_all_marker_L3 250 loss=2.802 acc=0.197 val=0.285 t=127
+P7_all_marker_L3 500 loss=1.756 acc=0.395 val=0.473 t=273
+P7_all_marker_L3 750 loss=1.590 acc=0.489 val=0.520 t=415
+P7_all_marker_L3 1000 loss=1.506 acc=0.537 val=0.535 t=620
+P7_all_marker_L3 1250 loss=1.435 acc=0.571 val=0.559 t=794
+P7_all_marker_L3 1500 loss=1.392 acc=0.600 val=0.605 t=938
+P7_all_marker_L3 1750 loss=1.339 acc=0.613 val=0.613 t=1065
+P7_all_marker_L3 2000 loss=1.306 acc=0.629 val=0.676 t=1166
+P7_all_marker_L3 2250 loss=1.277 acc=0.640 val=0.676 t=1295
+P7_all_marker_L3 2500 loss=1.253 acc=0.660 val=0.680 t=1382
+P7_all_marker_L3 2750 loss=1.227 acc=0.661 val=0.668 t=1445
+P7_all_marker_L3 3000 loss=1.213 acc=0.660 val=0.684 t=1530
